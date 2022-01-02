@@ -66,7 +66,7 @@ var move2 = Move.new("Tackle", 15)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    pass
+    $AnimationSprites.play("idlemeowth")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
