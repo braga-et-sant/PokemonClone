@@ -1,0 +1,168 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://pokemonfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://battleControl.gd" type="Script" id=2]
+[ext_resource path="res://combatsystem.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://BattleMenu.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 1, 1, 1, 1 )
+
+[node name="combatsystem" type="Node"]
+script = ExtResource( 3 )
+
+[node name="battleControl" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleMenu" type="CanvasLayer" parent="battleControl"]
+script = ExtResource( 5 )
+
+[node name="BattlePanel" type="Panel" parent="battleControl/BattleMenu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -448.0
+margin_top = -176.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BattleLabel" type="Label" parent="battleControl/BattleMenu/BattlePanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -78.5
+margin_right = 78.5
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 1 )
+text = "Select a move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move1" type="Button" parent="battleControl/BattleMenu/BattlePanel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -47.0
+margin_right = 182.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "Move 1: Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move2" type="Button" parent="battleControl/BattleMenu/BattlePanel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 263.0
+margin_top = -47.0
+margin_right = 445.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "Move 2: Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleTextBox" type="MarginContainer" parent="battleControl/BattleMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -176.0
+margin_right = 1023.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePanel" type="Panel" parent="battleControl/BattleMenu/BattleTextBox"]
+margin_right = 1023.0
+margin_bottom = 176.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="battleControl/BattleMenu/BattleTextBox"]
+margin_right = 1023.0
+margin_bottom = 176.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="MarginCheckPanel" type="Panel" parent="battleControl/BattleMenu/BattleTextBox/MarginContainer"]
+visible = false
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1007.0
+margin_bottom = 160.0
+
+[node name="TextBox" type="HBoxContainer" parent="battleControl/BattleMenu/BattleTextBox/MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1007.0
+margin_bottom = 160.0
+
+[node name="Start" type="Label" parent="battleControl/BattleMenu/BattleTextBox/MarginContainer/TextBox"]
+margin_right = 13.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "*"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BattleLog" type="Label" parent="battleControl/BattleMenu/BattleTextBox/MarginContainer/TextBox"]
+margin_left = 17.0
+margin_right = 974.0
+margin_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "This is the battle log:"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="End" type="Label" parent="battleControl/BattleMenu/BattleTextBox/MarginContainer/TextBox"]
+margin_left = 978.0
+margin_top = 112.0
+margin_right = 991.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 8
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "v"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Tween" type="Tween" parent="battleControl/BattleMenu"]
+
+[node name="MyPokemon" type="Sprite" parent="."]
+position = Vector2( 197, 356 )
+texture = ExtResource( 4 )
+
+[node name="EnemyPokemon" type="Sprite" parent="."]
+position = Vector2( 747, 137 )
+texture = ExtResource( 4 )
+
+[connection signal="pressed" from="battleControl/BattleMenu/BattlePanel/Move1" to="battleControl" method="_on_Move1_pressed"]
+[connection signal="pressed" from="battleControl/BattleMenu/BattlePanel/Move2" to="battleControl" method="_on_Move2_pressed"]
+[connection signal="tween_all_completed" from="battleControl/BattleMenu/Tween" to="battleControl/BattleMenu" method="_on_Tween_tween_all_completed"]
+[connection signal="tween_completed" from="battleControl/BattleMenu/Tween" to="battleControl/BattleMenu" method="_on_Tween_tween_completed"]
