@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://data/moves/Move.gd" type="Script" id=1]
+[ext_resource path="res://data/moves/Ember.gd" type="Script" id=2]
+[ext_resource path="res://data/moves/Hydro Pump.gd" type="Script" id=3]
+[ext_resource path="res://data/moves/Ice Beam.gd" type="Script" id=4]
+
+[node name="Move" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Ember" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Ice Beam" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Hydro Pump" type="Node" parent="."]
+script = ExtResource( 3 )

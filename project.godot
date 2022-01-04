@@ -8,10 +8,62 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Object",
+"class": "MajorAilment",
+"language": "GDScript",
+"path": "res://data/classes/MajorAilment.gd"
+}, {
+"base": "Object",
+"class": "Move",
+"language": "GDScript",
+"path": "res://data/moves/Move.gd"
+}, {
+"base": "Node",
+"class": "MoveDataBase",
+"language": "GDScript",
+"path": "res://data/MoveDataBase.gd"
+}, {
+"base": "Object",
+"class": "MoveStyle",
+"language": "GDScript",
+"path": "res://data/classes/MoveStyle.gd"
+}, {
+"base": "Object",
+"class": "MoveTarget",
+"language": "GDScript",
+"path": "res://data/classes/MoveTarget.gd"
+}, {
+"base": "Object",
+"class": "Type",
+"language": "GDScript",
+"path": "res://data/classes/Type.gd"
+}, {
+"base": "Object",
+"class": "pokemon_instance",
+"language": "GDScript",
+"path": "res://data/PokemonInstance.gd"
+}, {
+"base": "Object",
+"class": "registry",
+"language": "GDScript",
+"path": "res://data/registry.gd"
+} ]
+_global_script_class_icons={
+"MajorAilment": "",
+"Move": "",
+"MoveDataBase": "",
+"MoveStyle": "",
+"MoveTarget": "",
+"Type": "",
+"pokemon_instance": "",
+"registry": ""
+}
+
 [application]
 
 config/name="PokemonClone"
-run/main_scene="res://Town.tscn"
+run/main_scene="res://overworld/Town.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -28,4 +80,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+2d/snapping/use_gpu_pixel_snap=true
