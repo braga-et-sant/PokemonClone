@@ -1,3 +1,4 @@
+
 extends Area2D
 
 
@@ -14,7 +15,7 @@ func _ready():
 	if is_invisible:
 		$Sprite.texture = null
 	sprite.visible = false
-	var player = find_parent("CurrentScene").get_children().back().find_node("Player")
+	var player = Utils.get_player()
 	
 	player.connect("player_entering_door_signal", self, "enter_door")
 	player.connect("player_entered_door_signal", self, "close_door")
@@ -29,14 +30,14 @@ func close_door():
 	
 func door_closed():
 	if player_entered:
-		get_node(NodePath("/root/SceneManager")).transition_to_scene(next_scene_path, spawn_location, spawn_direction)
+		Utils.get_scene_manager().transition_to_scene(next_scene_path, spawn_location, spawn_direction)
 
 
 
 
-func _on_Door_body_entered(body):
+func _on_Door_body_entered(_body):
 	player_entered = true
 
 
-func _on_Door_body_exited(body):
+func _on_Door_body_exited(_body):
 	player_entered = false

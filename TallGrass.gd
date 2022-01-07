@@ -13,7 +13,7 @@ export(bool) var is_invisible = false
 var player_inside = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var player = find_parent("CurrentScene").get_children().back().find_node("Player")
+	var player = Utils.get_player()
 	player.connect("player_moving_signal", self, "player_exiting_grass")
 	player.connect("player_stopped_signal", self, "player_in_grass")
 
@@ -40,6 +40,6 @@ func player_in_grass():
 
 		
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	player_inside = true
 	anim_player.play("step")
