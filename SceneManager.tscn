@@ -2,13 +2,13 @@
 
 [ext_resource path="res://overworld/Town.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneManager.gd" type="Script" id=2]
-[ext_resource path="res://ColorRect.gd" type="Script" id=3]
-[ext_resource path="res://Menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://menu/FadeIn.gd" type="Script" id=3]
+[ext_resource path="res://menu/Menu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=2]
 resource_name = "FadeToBlack"
 tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("FadeIn:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,7 +37,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNormal"
 tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("FadeIn:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -52,7 +52,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("FadeIn:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -64,7 +64,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/path = NodePath("FadeIn:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -87,7 +87,7 @@ script = ExtResource( 2 )
 
 [node name="ScreenTransition" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="ScreenTransition"]
+[node name="FadeIn" type="ColorRect" parent="ScreenTransition"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -1.0

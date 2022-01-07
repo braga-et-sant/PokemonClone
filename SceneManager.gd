@@ -1,6 +1,7 @@
 extends Node2D
 
 var next_scene = null
+
 var player_location = Vector2(0, 0)
 var player_direction = Vector2(0, 0)
 
@@ -19,7 +20,7 @@ func transition_to_scene(new_scene: String, spawn_location, spawn_direction):
 	next_scene = new_scene
 	player_location = spawn_location
 	player_direction = spawn_direction
-	#ransition_type = TransitionType.NEW_SCENE
+	transition_type = TransitionType.NEW_SCENE
 	$ScreenTransition/AnimationPlayer.play("FadeToBlack")
 # Called when the node enters the scene tree for the first time.
 

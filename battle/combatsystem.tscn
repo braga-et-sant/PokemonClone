@@ -4,8 +4,8 @@
 [ext_resource path="res://battle/battleControl.gd" type="Script" id=2]
 [ext_resource path="res://styles/stylebattle.tres" type="StyleBox" id=4]
 [ext_resource path="res://battle/BattleMenu.gd" type="Script" id=5]
-[ext_resource path="res://sprites/meowthback.png" type="Texture" id=6]
-[ext_resource path="res://sprites/meowthfront.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Pokemon/meowthback.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Pokemon/meowthfront.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idlemeowth"

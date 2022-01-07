@@ -9,7 +9,7 @@ signal player_entered_door_signal
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const landing_effect = preload("res://LandingDustEffect.tscn")
+const landing_effect = preload("res://overworld/LandingDustEffect.tscn")
 
 export var walk_speed = 4.0
 export var jump_speed = 6.0
