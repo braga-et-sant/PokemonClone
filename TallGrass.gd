@@ -4,6 +4,7 @@ onready var anim_player = $AnimationPlayer
 const grass_overlay_texture = preload("res://sprites/stepped_tall_grass.png")
 const GrassStepEffect = preload("res://GrassStepEffect.tscn")
 var grass_overlay : TextureRect = null
+export(bool) var is_invisible = false
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,8 +13,10 @@ var grass_overlay : TextureRect = null
 var player_inside = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().current_scene.find_node("Player").connect("player_moving_signal", self, "player_exiting_grass")
-	get_tree().current_scene.find_node("Player").connect("player_stopped_signal", self, "player_in_grass")
+	var player = find_parent("CurrentScene").get_children().back().find_node("Player")
+	player.connect("player_moving_signal", self, "player_exiting_grass")
+	player.connect("player_stopped_signal", self, "player_in_grass")
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

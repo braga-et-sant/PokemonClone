@@ -24,7 +24,7 @@ class Actor:
 	func _to_string():
 		return "Name: %s, HP: %s, Speed: %s, Attack: %s, CurrentHP: %s" % [name, hp, speed, attack, chp]
 		
-class Move:
+class MoveBattle:
 	var name
 	var damage
 	
@@ -36,11 +36,11 @@ class Move:
 		return "Name: %s, Damage: %s" % [name, damage]
 		
 class MoveQueue:
-	var Move
+	var MoveBattle
 	var actor
 	var target
-	func _init(Move, actor, target):
-		self.Move = Move
+	func _init(MoveBattle, actor, target):
+		self.MoveBattle = MoveBattle
 		self.actor = actor
 		self.target = target
 		
@@ -51,7 +51,7 @@ class customSorterMoveQueue:
 		return false
 		
 func applyMove(M):
-	var damagedone = M.Move.damage + M.actor.attack
+	var damagedone = M.MoveBattle.damage + M.actor.attack
 	var text = "%s takes %s damage from %s's attack! Leaving him with %s life" % [M.target, damagedone, M.actor, M.target.chp]
 	print(text)
 	$BattleMenu.queue_text(text)
@@ -61,8 +61,8 @@ func applyMove(M):
 	
 var player = Actor.new("Player", 40, 5, 7)
 var enemy = Actor.new("Enemy", 30, 6, 10)
-var move1 = Move.new("Scratch", 10)
-var move2 = Move.new("Tackle", 15)
+var move1 = MoveBattle.new("Scratch", 10)
+var move2 = MoveBattle.new("Tackle", 15)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
