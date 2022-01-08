@@ -11,10 +11,10 @@ signal player_entered_door_signal
 # var b = "text"
 const landing_effect = preload("res://overworld/LandingDustEffect.tscn")
 
-export var walk_speed = 4.0
-export var jump_speed = 6.0
+export var walk_speed = 8.0
+export var jump_speed = 12.0
 
-const TILE_SIZE = 64
+const TILE_SIZE = 32
 
 onready var anim_tree = $AnimationTree
 onready var anim_state = anim_tree.get("parameters/playback")

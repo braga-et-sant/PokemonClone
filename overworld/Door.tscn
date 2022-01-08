@@ -113,14 +113,16 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 32, 32 )
+extents = Vector2( 16, 16 )
 
 [node name="Door" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 centered = false
 vframes = 3
@@ -131,7 +133,7 @@ anims/closedoor = SubResource( 2 )
 anims/opendoor = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 32, 32 )
+position = Vector2( 16, 16 )
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]

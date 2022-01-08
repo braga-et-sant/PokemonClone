@@ -72,6 +72,10 @@ Utils="*res://Autoload/utils.gd"
 
 [display]
 
+window/size/width=256
+window/size/height=192
+window/size/test_width=1024
+window/size/test_height=768
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -79,6 +83,7 @@ window/stretch/aspect="keep"
 
 "main scene"=false
 display=false
+load=false
 
 [input]
 
