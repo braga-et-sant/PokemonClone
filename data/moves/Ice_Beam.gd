@@ -5,7 +5,6 @@ var name = "Ice Beam"
 
 # The type of the move
 var type = Type.ICE
-
 # The style of the move (Physical, Special, Status)
 var style = MoveStyle.SPECIAL
 

@@ -53,3 +53,4 @@ var catch_rate = 45
 var weight = 65.1
 
 # Moveset by leveling
+

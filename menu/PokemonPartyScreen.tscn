@@ -202,8 +202,8 @@ tracks/0/keys = {
 script = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

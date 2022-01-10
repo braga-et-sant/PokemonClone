@@ -59,9 +59,11 @@ __meta__ = {
 }
 
 [node name="BattlePanelMoves" type="Panel" parent="battleControl/BattleMenu/BattleMoves"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -174.0
+anchor_left = 0.0449219
+anchor_top = 0.264368
+anchor_right = 0.0449219
+anchor_bottom = 0.264368
+margin_top = -163.0
 margin_right = 713.0
 margin_bottom = 2.0
 custom_styles/panel = ExtResource( 4 )
@@ -255,8 +257,7 @@ __meta__ = {
 }
 
 [node name="EnemyPokemon" type="Sprite" parent="battleControl"]
-position = Vector2( 666, 77 )
-scale = Vector2( 2, 2 )
+position = Vector2( 184, -8 )
 texture = ExtResource( 7 )
 centered = false
 hframes = 14
@@ -264,8 +265,7 @@ vframes = 10
 frame = 12
 
 [node name="PlayerPokemon" type="Sprite" parent="battleControl"]
-position = Vector2( 305, 326 )
-scale = Vector2( 2, 2 )
+position = Vector2( 59, 99 )
 texture = ExtResource( 6 )
 hframes = 13
 vframes = 11

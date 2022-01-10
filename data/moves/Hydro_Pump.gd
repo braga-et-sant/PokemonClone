@@ -5,7 +5,6 @@ var name = "Hydro Pump"
 
 # The type of the move
 var type = Type.WATER
-
 # The style of the move (Physical, Special, Status)
 var style = MoveStyle.SPECIAL
 

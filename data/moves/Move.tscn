@@ -2,8 +2,8 @@
 
 [ext_resource path="res://data/moves/Move.gd" type="Script" id=1]
 [ext_resource path="res://data/moves/Ember.gd" type="Script" id=2]
-[ext_resource path="res://data/moves/Hydro Pump.gd" type="Script" id=3]
-[ext_resource path="res://data/moves/Ice Beam.gd" type="Script" id=4]
+[ext_resource path="res://data/moves/Hydro_Pump.gd" type="Script" id=3]
+[ext_resource path="res://data/moves/Ice_Beam.gd" type="Script" id=4]
 
 [node name="Move" type="Node"]
 script = ExtResource( 1 )
