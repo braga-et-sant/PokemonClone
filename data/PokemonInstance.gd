@@ -25,9 +25,9 @@ var ivs = {"hp":0, "atk":0, "def":0, "spd":0, "spa":0, "spe": 0}
 func _ready():
 	pass # Replace with function body.
 	
-func default(poke_n):
+func genWild(poke_n : int) -> pokemon_instance:
 	var regist = registry.new()
-	var poke = regist.get_pokemon_class(1)
+	var poke = regist.get_pokemon_class(poke_n)
 	ID = poke.ID
 	OT = ""
 	nick = poke.name
@@ -39,14 +39,24 @@ func default(poke_n):
 	randomize()
 	level = randi()%10+1
 	
-	var moved = MoveDataBase.new()
-	var m1 = moved.get_move_by_name("Ice Beam")
-	var m2 = moved.get_move_by_name("Ember")
-	var m3 = moved.get_move_by_name("Hydro Pump")
-	var m4 = null
-	moves = {"move1": m1, "move2": m2, "move3":m3, "move4":null}
-	
+	moves = makeMoveList(poke, level)
+	print(moves)
 	return self
+	
+func makeMoveList(poke, level):
+	var moveDb = MoveDataBase.new()
+	var learnset = poke.moveset
+	var limit = level
+	var movelistcur = []
+	var mindex = 0
+	for m in learnset:
+		if(m.level <= limit):
+			print("Im here")
+			movelistcur.insert(mindex, moveDb.get_move_by_name(m.move))
+			mindex = mindex+1 if (mindex < 3) else 0 
+		else:
+			break;
+	return movelistcur
 
 func _to_string():
 	var p1 =  "" + str(ID) + "|" + OT + "|" + nick + "|" + ability + "|" + nature  + "|" + held  + "|" \

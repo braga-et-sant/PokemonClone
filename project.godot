@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://data/MoveDataBase.gd"
 }, {
 "base": "Object",
+"class": "MoveSet",
+"language": "GDScript",
+"path": "res://utils/MoveSet.gd"
+}, {
+"base": "Object",
 "class": "MoveStyle",
 "language": "GDScript",
 "path": "res://data/classes/MoveStyle.gd"
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "MajorAilment": "",
 "Move": "",
 "MoveDataBase": "",
+"MoveSet": "",
 "MoveStyle": "",
 "MoveTarget": "",
 "Type": "",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sprites/Pokemon/meowthback.png" type="Texture" id=1]
 [ext_resource path="res://styles/pokemonfont.tres" type="DynamicFont" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://styles/flatbattlestyle.tres" type="StyleBox" id=4]
 [ext_resource path="res://BattleControl.gd" type="Script" id=5]
 [ext_resource path="res://sprites/menu/battle/ui_arrow_left_right_battle.png" type="Texture" id=6]
+[ext_resource path="res://BattleDialog.gd" type="Script" id=7]
+[ext_resource path="res://styles/stylebattle.tres" type="StyleBox" id=8]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.603922, 0.584314, 0.584314, 1 )
@@ -137,13 +139,16 @@ __meta__ = {
 
 [node name="HpBar" type="ProgressBar" parent="BattleControl/BattleScreen/PlayPoke"]
 margin_left = 20.0
-margin_top = 18.0
+margin_top = 16.0
 margin_right = 97.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 theme = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 value = 100.0
-percent_visible = false
+allow_lesser = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OppPoke" type="Panel" parent="BattleControl/BattleScreen"]
 margin_left = 15.0
@@ -225,7 +230,6 @@ margin_bottom = 27.0
 theme = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 value = 100.0
-percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -457,3 +461,99 @@ margin_right = 68.0
 margin_bottom = 13.0
 custom_fonts/font = SubResource( 8 )
 text = "Normal"
+
+[node name="BattleDialog" type="Control" parent="BattleControl"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="BattleControl/BattleDialog"]
+
+[node name="BattleTextBox" type="MarginContainer" parent="BattleControl/BattleDialog"]
+light_mask = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 93.0
+margin_right = 216.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePanel" type="Panel" parent="BattleControl/BattleDialog/BattleTextBox"]
+margin_right = 256.0
+margin_bottom = 59.0
+custom_styles/panel = ExtResource( 8 )
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleControl/BattleDialog/BattleTextBox"]
+margin_right = 256.0
+margin_bottom = 59.0
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="MarginCheckPanel" type="Panel" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 56.0
+
+[node name="TextBox" type="HBoxContainer" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 56.0
+
+[node name="Start" type="Label" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer/TextBox"]
+margin_right = 13.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "*"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BattleLog" type="Label" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer/TextBox"]
+margin_left = 17.0
+margin_right = 233.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "This is the battle log:"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="End" type="Label" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer/TextBox"]
+margin_left = 237.0
+margin_top = 41.0
+margin_right = 250.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 8
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "v"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Timer" type="Timer" parent="BattleControl/BattleDialog"]
+one_shot = true
+
+[connection signal="allPrinted" from="BattleControl/BattleDialog" to="BattleControl" method="_on_BattleDialog_allPrinted"]
+[connection signal="tween_completed" from="BattleControl/BattleDialog/Tween" to="BattleControl/BattleDialog" method="_on_Tween_tween_completed"]
+[connection signal="timeout" from="BattleControl/BattleDialog/Timer" to="BattleControl/BattleDialog" method="_on_Timer_timeout"]

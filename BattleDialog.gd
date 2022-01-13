@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 const CHAR_READ_RATE = 0.01
 
@@ -6,6 +6,8 @@ onready var textbox_container = $BattleTextBox
 onready var start_symbol = $BattleTextBox/MarginContainer/TextBox/Start
 onready var end_symbol = $BattleTextBox/MarginContainer/TextBox/End
 onready var label = $BattleTextBox/MarginContainer/TextBox/BattleLog
+
+signal allPrinted
 
 enum State {
 	READY,
@@ -19,8 +21,6 @@ var text_queue = []
 func _ready():
 	print("Starting state: State.READY")
 	hide_textbox()
-	queue_text("Testing 123")
-	queue_text("Testing 123")
 
 func _process(delta):
 	match current_state:
@@ -63,11 +63,11 @@ func change_state(next_state):
 	current_state = next_state
 	match current_state:
 		State.READY:
-			print("Changing state to: State.READY")
+			pass#print("Changing state to: State.READY")
 		State.READING:
-			print("Changing state to: State.READING")
+			pass#print("Changing state to: State.READING")
 		State.FINISHED:
-			print("Changing state to: State.FINISHED")
+			pass#print("Changing state to: State.FINISHED")
 
 func _on_Tween_tween_completed(object, key):
 	end_symbol.text = "v"
@@ -75,6 +75,10 @@ func _on_Tween_tween_completed(object, key):
 	$Timer.start(0.8)
 	
 func close_dialog():
+	if text_queue.empty():
+		#print("This was the last piece of text queued")
+		emit_signal("allPrinted")
+		
 	change_state(State.READY)
 	hide_textbox()
 

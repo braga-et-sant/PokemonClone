@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://styles/pokemonfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://battle/BattleMenu.gd" type="Script" id=2]
+[ext_resource path="res://styles/stylebattle.tres" type="StyleBox" id=3]
+
+[node name="BattleMenu" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="BattleTextBox" type="MarginContainer" parent="."]
+light_mask = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -59.0
+rect_min_size = Vector2( 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePanel" type="Panel" parent="BattleTextBox"]
+margin_right = 256.0
+margin_bottom = 59.0
+custom_styles/panel = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleTextBox"]
+margin_right = 256.0
+margin_bottom = 59.0
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="MarginCheckPanel" type="Panel" parent="BattleTextBox/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 56.0
+
+[node name="TextBox" type="HBoxContainer" parent="BattleTextBox/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 56.0
+
+[node name="Start" type="Label" parent="BattleTextBox/MarginContainer/TextBox"]
+margin_right = 13.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "*"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BattleLog" type="Label" parent="BattleTextBox/MarginContainer/TextBox"]
+margin_left = 17.0
+margin_right = 233.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "This is the battle log:"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="End" type="Label" parent="BattleTextBox/MarginContainer/TextBox"]
+margin_left = 237.0
+margin_top = 41.0
+margin_right = 250.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 8
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "v"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

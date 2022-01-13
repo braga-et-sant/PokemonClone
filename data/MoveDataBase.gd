@@ -2,6 +2,7 @@ extends Node
 class_name MoveDataBase
 
 static func get_move_by_name(name):
+	name = name if !(name == null) else ""
 	var file_name = "res://data/moves/" + name.replace(" ", "_") + ".gd"
 	var data = load(file_name)
 
@@ -10,7 +11,8 @@ static func get_move_by_name(name):
 		data = load(file_name)
 	
 	if data == null:
-		print("MoveDatabase ERROR: The move, '" + name + "' does not have a file.")
+		print("MoveDatabase ERROR: The move, '" + name + "' does not have a file. Loading default move")
+		file_name = "res://data/moves/Ice_Beam.gd"
 	
 	data = load(file_name).new()
 

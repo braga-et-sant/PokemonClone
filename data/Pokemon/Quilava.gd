@@ -4,7 +4,7 @@ extends Object
 var name = "Quilava"
 
 # Pokedex ID#
-var ID = 1
+var ID = 3
 
 # The pokemon's type. If only one type use type1
 var type = Type.FIRE

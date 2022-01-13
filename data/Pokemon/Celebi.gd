@@ -53,4 +53,11 @@ var catch_rate = 45
 var weight = 65.1
 
 # Moveset by leveling
+var movelist = []
 
+var moveset = [
+	MoveSet.new(1, "Ice Beam"),
+	MoveSet.new(1, "Hydro Pump"),
+	MoveSet.new(1, "Ember"),
+	MoveSet.new(1, "Thunder Shock"),
+]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://styles/pokemonfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://styles/stylebattle.tres" type="StyleBox" id=2]
+
+[node name="BattleTextBox" type="MarginContainer"]
+light_mask = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -176.0
+margin_right = 1024.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePanel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 176.0
+custom_styles/panel = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 176.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="MarginCheckPanel" type="Panel" parent="MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 160.0
+
+[node name="TextBox" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 160.0
+
+[node name="Start" type="Label" parent="MarginContainer/TextBox"]
+margin_right = 13.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "*"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BattleLog" type="Label" parent="MarginContainer/TextBox"]
+margin_left = 17.0
+margin_right = 975.0
+margin_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "This is the battle log:"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="End" type="Label" parent="MarginContainer/TextBox"]
+margin_left = 979.0
+margin_top = 132.0
+margin_right = 992.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 8
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "v"
+__meta__ = {
+"_edit_use_anchors_": true
+}
