@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprites/Pokemon/meowthback.png" type="Texture" id=1]
 [ext_resource path="res://styles/pokemonfont.tres" type="DynamicFont" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://sprites/menu/battle/ui_arrow_left_right_battle.png" type="Texture" id=6]
 [ext_resource path="res://BattleDialog.gd" type="Script" id=7]
 [ext_resource path="res://styles/stylebattle.tres" type="StyleBox" id=8]
+[ext_resource path="res://sprites/battle/bases/41996.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.603922, 0.584314, 0.584314, 1 )
@@ -53,13 +54,27 @@ __meta__ = {
 
 [node name="BattleScreen" type="CanvasLayer" parent="BattleControl"]
 
-[node name="OppSprite" type="Sprite" parent="BattleControl/BattleScreen"]
+[node name="PlayBase" type="Sprite" parent="BattleControl/BattleScreen"]
+position = Vector2( 65, 118 )
+scale = Vector2( 0.533582, 0.686275 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 268.421, 51.0793 )
+
+[node name="OppBase" type="Sprite" parent="BattleControl/BattleScreen"]
+position = Vector2( 198, 51 )
+scale = Vector2( 0.869231, 0.872727 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 270, 10, 130, 55 )
+
+[node name="PlaySprite" type="Sprite" parent="BattleControl/BattleScreen"]
 position = Vector2( 58, 96 )
 texture = ExtResource( 1 )
 hframes = 13
 vframes = 11
 
-[node name="PlaySprite" type="Sprite" parent="BattleControl/BattleScreen"]
+[node name="OppSprite" type="Sprite" parent="BattleControl/BattleScreen"]
 position = Vector2( 201, 29 )
 texture = ExtResource( 3 )
 hframes = 14
@@ -235,7 +250,6 @@ __meta__ = {
 }
 
 [node name="StandbyMenu" type="Control" parent="BattleControl"]
-visible = false
 anchor_top = 3.29
 anchor_right = 6.394
 anchor_bottom = 4.8

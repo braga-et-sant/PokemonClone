@@ -6,8 +6,10 @@ var name = "Quilava"
 # Pokedex ID#
 var ID = 3
 
+var spritenode = "res://sprites/Pokemon/Meowth.tscn"
+
 # The pokemon's type. If only one type use type1
-var type = Type.FIRE
+var type1 = Type.FIRE
 var type2
 
 # The pokemon's base stats (HP,Attack,Defense,Sp.Atack,Sp.Def,Speed)

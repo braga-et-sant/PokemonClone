@@ -19,7 +19,6 @@ var current_state = State.READY
 var text_queue = []
 
 func _ready():
-	print("Starting state: State.READY")
 	hide_textbox()
 
 func _process(delta):

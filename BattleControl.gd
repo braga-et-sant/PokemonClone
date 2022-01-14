@@ -3,8 +3,13 @@ extends Control
 enum BattleState {STANDBY, MOVE_SELECT, POKEMON_SELECT, ITEM_SELECT, RUN, DO_MOVE}
 var curState = BattleState.STANDBY
 
-var pokeOpp = pokemon_instance.new().genWild(2)
+var pokeOpp = pokemon_instance.new().genWild(4)
 var pokePlayer = pokemon_instance.new().genWild(1)
+
+var pokeSprite
+var oppSprite
+
+var regist = registry.new()
 
 # Standby Menu
 onready var standByMenu = $StandbyMenu
@@ -45,6 +50,7 @@ func _ready():
 	setupOpp()
 	
 func setupPlayer() -> void:
+	
 	$StandbyMenu/MessageBox/StandbyPrompt.text = "What will " + pokePlayer.nick + " do?"
 	
 	$BattleScreen/PlayPoke/HpProgress/Cvalue.text = str(pokePlayer.chp)
@@ -52,12 +58,18 @@ func setupPlayer() -> void:
 	$BattleScreen/PlayPoke/HpBar.max_value = pokePlayer.rawstats.hp
 	$BattleScreen/PlayPoke/Name.text = pokePlayer.nick
 	$BattleScreen/PlayPoke/Level.text =  "Lv " + str(pokePlayer.level)
-	print(pokePlayer.moves)
 	$MoveSelectMenu/MoveSelect/MoveBox/Move1.text = pokePlayer.moves[0].name
 	$MoveSelectMenu/MoveSelect/MoveBox/Move2.text = pokePlayer.moves[1].name
 	$MoveSelectMenu/MoveSelect/MoveBox/Move3.text = pokePlayer.moves[2].name
 	$MoveSelectMenu/MoveSelect/MoveBox/Move4.text = pokePlayer.moves[3].name
 	
+	var filepath = regist.get_pokemon_class(pokePlayer.ID).spritenode
+	
+	pokeSprite = load(filepath).instance()
+	pokeSprite.flag = 0
+	pokeSprite.position = ($BattleScreen/PlaySprite.position)
+	$BattleScreen/PlaySprite.queue_free()
+	$BattleScreen.add_child(pokeSprite)
 	
 	
 func setupOpp() -> void:
@@ -66,6 +78,14 @@ func setupOpp() -> void:
 	$BattleScreen/OppPoke/Name.text = pokeOpp.nick
 	$BattleScreen/OppPoke/Level.text = "Lv " + str(pokeOpp.level)
 	$BattleScreen/OppPoke/HpBar.max_value = pokeOpp.rawstats.hp
+	
+	var filepath = regist.get_pokemon_class(pokeOpp.ID).spritenode
+	
+	oppSprite = load(filepath).instance()
+	oppSprite.flag = 1
+	oppSprite.position = ($BattleScreen/OppSprite.position)
+	$BattleScreen/OppSprite.queue_free()
+	$BattleScreen.add_child(oppSprite)
 	
 func updateGameState() -> void:
 	$BattleScreen/PlayPoke/HpProgress/Cvalue.text = str(pokePlayer.chp)

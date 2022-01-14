@@ -34,7 +34,7 @@ func genWild(poke_n : int) -> pokemon_instance:
 	ability = poke.ability
 	rawstats = {"hp":poke.hp, "atk":poke.attack, "def":poke.defense, "spd":poke.sp_defense, "spa":poke.sp_attack, "spe": poke.speed}
 	chp = rawstats["hp"]-1
-	type1 = poke.type
+	type1 = poke.type1
 	
 	randomize()
 	level = randi()%10+1

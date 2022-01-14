@@ -1,42 +1,42 @@
 extends Object
 
 # The name of the pokemon
-var name = "Celebi"
+var name = "Farfetchd"
 
 # Pokedex ID#
-var ID = 2
+var ID = 4
 
-var spritenode = "res://sprites/Pokemon/Meowth.tscn"
+var spritenode = "res://sprites/Pokemon/Farfetchd.tscn"
 
 # The pokemon's type. If only one type use type1
-var type1 = Type.ELECTRIC
-var type2
+var type1 = Type.WATER
+var type2 = Type.FLYING
 
 # The pokemon's base stats (HP,Attack,Defense,Sp.Atack,Sp.Def,Speed)
-var hp = 90
-var attack = 75
-var defense = 85
-var sp_attack = 115
-var sp_defense = 90
-var speed = 50
+var hp = 95
+var attack = 125
+var defense = 79
+var sp_attack = 60
+var sp_defense = 100
+var speed = 81
 
 # The pokemon's public and hidden abilities
-var ability = "Blaze"
+var ability = "lol"
 var hidden_ability
 
 # The pokemon's Effort Value Yeild
 var ev_yield_hp = 0
-var ev_yield_attack = 0
+var ev_yield_attack = 2
 var ev_yield_defense = 0
-var ev_yield_sp_attack = 3
+var ev_yield_sp_attack = 0
 var ev_yield_sp_defense = 0
 var ev_yield_speed = 0
 
 # The pokemon's base experience yield when defeated
-var exp_yield : int = 227
+var exp_yield : int = 189
 
 # The pokemon's leveling rate
-var leveling_rate = MEDIUM_FAST
+var leveling_rate = SLOW
 enum {SLOW, MEDIUM_SLOW, MEDIUM_FAST, FAST, ERRATIC, FLUCTUATING}
 
 # The pokemon's gender ratio male percentage.
@@ -52,11 +52,9 @@ var evolution_ID
 var catch_rate = 45
 
 # Weight in kg
-var weight = 65.1
+var weight = 235.0
 
 # Moveset by leveling
-var movelist = []
-
 var moveset = [
 	MoveSet.new(1, "Ice Beam"),
 	MoveSet.new(1, "Hydro Pump"),
