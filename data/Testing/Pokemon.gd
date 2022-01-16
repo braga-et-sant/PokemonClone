@@ -14,7 +14,7 @@ func _ready():
 	var bug = types.BUG
 	var quilava = regist.get_pokemon_class(1)
 	print(quilava.name)
-	print(quilava.type)
+	print(quilava.type1)
 	print(quilava.ID)
 
 	var newinstance = genFromRegistry(2)

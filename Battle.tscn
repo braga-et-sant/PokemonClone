@@ -5,7 +5,7 @@
 [ext_resource path="res://sprites/Pokemon/meowthfront.png" type="Texture" id=3]
 [ext_resource path="res://styles/flatbattlestyle.tres" type="StyleBox" id=4]
 [ext_resource path="res://BattleControl.gd" type="Script" id=5]
-[ext_resource path="res://sprites/menu/battle/ui_arrow_left_right_battle.png" type="Texture" id=6]
+[ext_resource path="res://sprites/menu/ui_arrow_left_right_battle.png" type="Texture" id=6]
 [ext_resource path="res://BattleDialog.gd" type="Script" id=7]
 [ext_resource path="res://styles/stylebattle.tres" type="StyleBox" id=8]
 [ext_resource path="res://sprites/battle/bases/41996.png" type="Texture" id=9]
@@ -36,7 +36,6 @@ font_data = SubResource( 1 )
 
 [sub_resource type="StreamTexture" id=7]
 flags = 4
-load_path = "res://.import/ui_arrow_left_right_battle.png-4dd867c0c2c3fd91912c6860dee79f0f.stex"
 
 [sub_resource type="DynamicFont" id=8]
 size = 10
@@ -76,7 +75,7 @@ region_enabled = true
 region_rect = Rect2( 270, 10, 130, 55 )
 
 [node name="PlaySprite" type="Sprite" parent="BattleControl/BattleScreen"]
-position = Vector2( 58, 96 )
+position = Vector2( 58, 103 )
 texture = ExtResource( 1 )
 hframes = 13
 vframes = 11
@@ -354,6 +353,7 @@ custom_fonts/normal_font = SubResource( 2 )
 text = "What will Pokémon do..."
 
 [node name="MoveSelectMenu" type="Control" parent="BattleControl"]
+visible = false
 margin_left = 86.0
 margin_top = 192.0
 margin_right = 86.0
@@ -484,6 +484,7 @@ custom_fonts/font = SubResource( 8 )
 text = "Normal"
 
 [node name="BattleDialog" type="Control" parent="BattleControl"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
@@ -576,6 +577,7 @@ __meta__ = {
 one_shot = true
 
 [node name="Switch" type="Control" parent="BattleControl"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {

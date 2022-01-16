@@ -83,7 +83,8 @@ func setupPlayer() -> void:
 	
 	var filepath = regist.get_pokemon_class(pokePlayer.ID).spritenode
 	
-	$BattleScreen.remove_child(pokeSprite)
+	if(pokeSprite != null):
+		$BattleScreen.remove_child(pokeSprite)
 	pokeSprite = load(filepath).instance()
 	pokeSprite.flag = 0
 	pokeSprite.position = ($BattleScreen/PlaySprite.position)
@@ -205,12 +206,13 @@ func switchPokemon() -> void:
 	setupPlayer()
 	
 	
+	
+	transistionState(BattleState.POKEMON_SELECT, BattleState.DO_MOVE)
 	var aiMove = []
 	aiMove.append(oppMoveAI())
-	print(aiMove.size())
 	executeBattleQueue(aiMove)
 	
-	transistionState(BattleState.POKEMON_SELECT, BattleState.STANDBY)
+	#transistionState(BattleState.DO_MOVE, BattleState.STANDBY)
 	
 func transistionState(current: int, next: int) -> void:
 	match current:
