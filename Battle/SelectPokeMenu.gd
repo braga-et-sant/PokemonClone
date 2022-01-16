@@ -4,6 +4,11 @@ enum SelectPokeOption {P1, P2, P3, P4, P5, P6}
 
 onready var arrow = $BasePanel/Arrow
 
+const SWITCHARROWDEFAULT = Vector2(37, 58)
+
+func _ready():
+	arrow.rect_position = SWITCHARROWDEFAULT
+
 func setup(teamPlayer):
 	var grid = $BasePanel/PartyContainer
 	var count = 0

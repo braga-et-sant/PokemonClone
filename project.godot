@@ -55,6 +55,11 @@ _global_script_classes=[ {
 "path": "res://Data/Helpers/TypeStr.gd"
 }, {
 "base": "Object",
+"class": "action",
+"language": "GDScript",
+"path": "res://Battle/Action.gd"
+}, {
+"base": "Object",
 "class": "pokemon_instance",
 "language": "GDScript",
 "path": "res://Data/PokemonData/PokemonInstance/PokemonInstance.gd"
@@ -74,6 +79,7 @@ _global_script_class_icons={
 "MoveTarget": "",
 "Type": "",
 "TypeStr": "",
+"action": "",
 "pokemon_instance": "",
 "registry": ""
 }

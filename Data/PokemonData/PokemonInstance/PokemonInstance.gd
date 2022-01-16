@@ -20,10 +20,6 @@ var moves = {"move1": null, "move2": null, "move3":null, "move4":null}
 var rawstats = {"hp":0, "atk":0, "def":0, "spd":0, "spa":0, "spe": 0}
 var evs = {"hp":0, "atk":0, "def":0, "spd":0, "spa":0, "spe": 0}
 var ivs = {"hp":0, "atk":0, "def":0, "spd":0, "spa":0, "spe": 0}
-
-
-func _ready():
-	pass # Replace with function body.
 	
 func genWild(poke_n : int) -> pokemon_instance:
 	var regist = registry.new()
