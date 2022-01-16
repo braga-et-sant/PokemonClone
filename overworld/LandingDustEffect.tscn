@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://overworld/LandingDustEffect.gd" type="Script" id=1]
+[ext_resource path="res://Overworld/LandingDustEffect.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Tileset/jump_landing_dust_optimized.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=1]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rival_home.png-76328a518a447109a98f9f1ab0faab05.stex"
+path="res://.import/rival_home.png-257972b19b108c5c12d7ed592df081ef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/rival_home.png"
-dest_files=[ "res://.import/rival_home.png-76328a518a447109a98f9f1ab0faab05.stex" ]
+source_file="res://Sprites/Tileset/rival_home.png"
+dest_files=[ "res://.import/rival_home.png-257972b19b108c5c12d7ed592df081ef.stex" ]
 
 [params]
 

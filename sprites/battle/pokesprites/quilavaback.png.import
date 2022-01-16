@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quilavaback.png-ce2942d3b5e0d458e38cbf5354b87594.stex"
+path="res://.import/quilavaback.png-d86761dc8794b80b43d22dfc5dabcb8d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/battle/pokesprites/quilavaback.png"
-dest_files=[ "res://.import/quilavaback.png-ce2942d3b5e0d458e38cbf5354b87594.stex" ]
+source_file="res://Sprites/battle/pokesprites/quilavaback.png"
+dest_files=[ "res://.import/quilavaback.png-d86761dc8794b80b43d22dfc5dabcb8d.stex" ]
 
 [params]
 

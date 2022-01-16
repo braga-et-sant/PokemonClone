@@ -1,9 +1,9 @@
 [gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://sprites/Tileset/hgss/tilesetgoldsilverhalf.png" type="Texture" id=1]
-[ext_resource path="res://overworld/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://overworld/maps/Home1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://overworld/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Overworld/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Overworld/maps/Home1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Overworld/Door.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )

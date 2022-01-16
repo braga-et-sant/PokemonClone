@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://overworld/Flowers.gd" type="Script" id=1]
+[ext_resource path="res://Overworld/Flowers.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Tileset/red_flower_optimized.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=1]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gender_icons.png-84fa4f27922e6b8dd2eb4d5d8ab9351a.stex"
+path="res://.import/gender_icons.png-db85de2613ab79302f25ecf103e956b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/gender_icons.png"
-dest_files=[ "res://.import/gender_icons.png-84fa4f27922e6b8dd2eb4d5d8ab9351a.stex" ]
+source_file="res://Sprites/menu/gender_icons.png"
+dest_files=[ "res://.import/gender_icons.png-db85de2613ab79302f25ecf103e956b3.stex" ]
 
 [params]
 

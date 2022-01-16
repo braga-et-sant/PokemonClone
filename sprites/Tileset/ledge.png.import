@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ledge.png-b3b82f71bf4563b14d72f9c9cd9f0a5e.stex"
+path="res://.import/ledge.png-77bfe7c4ae24c360507f0ea6a0ef8e9f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/ledge.png"
-dest_files=[ "res://.import/ledge.png-b3b82f71bf4563b14d72f9c9cd9f0a5e.stex" ]
+source_file="res://Sprites/Tileset/ledge.png"
+dest_files=[ "res://.import/ledge.png-77bfe7c4ae24c360507f0ea6a0ef8e9f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meowthfront.png-184ac04c7c40591bd07bed6cc0be1047.stex"
+path="res://.import/meowthfront.png-f9822a36bc98a2b64a0ef13bf67adb82.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Pokemon/meowthfront.png"
-dest_files=[ "res://.import/meowthfront.png-184ac04c7c40591bd07bed6cc0be1047.stex" ]
+source_file="res://Sprites/Pokemon/meowthfront.png"
+dest_files=[ "res://.import/meowthfront.png-f9822a36bc98a2b64a0ef13bf67adb82.stex" ]
 
 [params]
 

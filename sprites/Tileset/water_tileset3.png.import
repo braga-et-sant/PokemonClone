@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/water_tileset3.png-5a8a0d67a22f20e64a6b4833bb8a4a3e.stex"
+path="res://.import/water_tileset3.png-f93778bebf60641b41de7a100cf47364.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/water_tileset3.png"
-dest_files=[ "res://.import/water_tileset3.png-5a8a0d67a22f20e64a6b4833bb8a4a3e.stex" ]
+source_file="res://Sprites/Tileset/water_tileset3.png"
+dest_files=[ "res://.import/water_tileset3.png-f93778bebf60641b41de7a100cf47364.stex" ]
 
 [params]
 

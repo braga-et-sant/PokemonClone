@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jump_landing_dust_optimized.png-1d488404dddc1805c69bf65aed8fd2db.stex"
+path="res://.import/jump_landing_dust_optimized.png-7179d326fd306e732cffd2a874177402.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/jump_landing_dust_optimized.png"
-dest_files=[ "res://.import/jump_landing_dust_optimized.png-1d488404dddc1805c69bf65aed8fd2db.stex" ]
+source_file="res://Sprites/Tileset/jump_landing_dust_optimized.png"
+dest_files=[ "res://.import/jump_landing_dust_optimized.png-7179d326fd306e732cffd2a874177402.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grass2_tileset_bigger.png-f2a603c3c7dc3b613bc62b1a8b97cadb.stex"
+path="res://.import/grass2_tileset_bigger.png-5df29129fc3ff0339e5d27d34f73cf14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/grass2_tileset_bigger.png"
-dest_files=[ "res://.import/grass2_tileset_bigger.png-f2a603c3c7dc3b613bc62b1a8b97cadb.stex" ]
+source_file="res://Sprites/Tileset/grass2_tileset_bigger.png"
+dest_files=[ "res://.import/grass2_tileset_bigger.png-5df29129fc3ff0339e5d27d34f73cf14.stex" ]
 
 [params]
 

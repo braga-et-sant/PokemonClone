@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Data/PokemonData/Farfetchd.gd" type="Script" id=1]
+[ext_resource path="res://Data/PokemonData/Celebi.gd" type="Script" id=2]
+[ext_resource path="res://Data/PokemonData/Meowth.gd" type="Script" id=3]
+[ext_resource path="res://Data/PokemonData/Quilava.gd" type="Script" id=4]
+[ext_resource path="res://Data/PokemonData/PokemonNode/PokemonNode.gd" type="Script" id=5]
+
+[node name="PokemonCentral" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Celebi" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Farfetchd" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="Meowth" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Quilava" type="Node" parent="."]
+script = ExtResource( 4 )

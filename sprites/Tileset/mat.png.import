@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mat.png-1c8a6c4d360025b62c8648908b4a63d0.stex"
+path="res://.import/mat.png-d879f9cadb186766d3975288ecc4886c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/mat.png"
-dest_files=[ "res://.import/mat.png-1c8a6c4d360025b62c8648908b4a63d0.stex" ]
+source_file="res://Sprites/Tileset/mat.png"
+dest_files=[ "res://.import/mat.png-d879f9cadb186766d3975288ecc4886c.stex" ]
 
 [params]
 

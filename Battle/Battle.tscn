@@ -1,0 +1,750 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://styles/pokemonfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Battle/BattleDialog.gd" type="Script" id=2]
+[ext_resource path="res://Battle/BattleControl.gd" type="Script" id=3]
+[ext_resource path="res://sprites/Pokemon/meowthfront.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Pokemon/meowthback.png" type="Texture" id=5]
+[ext_resource path="res://sprites/menu/ui_arrow_left_right_battle.png" type="Texture" id=6]
+[ext_resource path="res://sprites/battle/bases/41996.png" type="Texture" id=7]
+[ext_resource path="res://styles/stylebattle.tres" type="StyleBox" id=8]
+[ext_resource path="res://styles/flatbattlestyle.tres" type="StyleBox" id=9]
+[ext_resource path="res://Sprites/menu/ui_arrow_left_right.png" type="Texture" id=10]
+[ext_resource path="res://Battle/BattleScreen.gd" type="Script" id=11]
+[ext_resource path="res://Battle/StandbyMenu.gd" type="Script" id=12]
+[ext_resource path="res://Battle/MoveSelectMenu.gd" type="Script" id=13]
+[ext_resource path="res://Battle/SelectPokeMenu.gd" type="Script" id=14]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.603922, 0.584314, 0.584314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/pokemon-dppt.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 9
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 9
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 10
+font_data = SubResource( 1 )
+
+[node name="BattleSceneNode" type="Node2D"]
+
+[node name="BattleControl" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleScreen" type="Control" parent="BattleControl"]
+visible = false
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayBase" type="Sprite" parent="BattleControl/BattleScreen"]
+position = Vector2( 65, 118 )
+scale = Vector2( 0.533582, 0.686275 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 268.421, 51.0793 )
+
+[node name="OppBase" type="Sprite" parent="BattleControl/BattleScreen"]
+position = Vector2( 198, 51 )
+scale = Vector2( 0.869231, 0.872727 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 270, 10, 130, 55 )
+
+[node name="PlaySprite" type="Sprite" parent="BattleControl/BattleScreen"]
+position = Vector2( 58, 103 )
+texture = ExtResource( 5 )
+hframes = 13
+vframes = 11
+
+[node name="OppSprite" type="Sprite" parent="BattleControl/BattleScreen"]
+position = Vector2( 201, 29 )
+texture = ExtResource( 4 )
+hframes = 14
+vframes = 10
+
+[node name="PlayPoke" type="Panel" parent="BattleControl/BattleScreen"]
+margin_left = 153.0
+margin_top = 88.0
+margin_right = 255.0
+margin_bottom = 128.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="BattleControl/BattleScreen/PlayPoke"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 4 )
+text = "Meowth"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="BattleControl/BattleScreen/PlayPoke"]
+margin_left = 68.0
+margin_top = 5.0
+margin_right = 93.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 4 )
+text = "Lv100"
+
+[node name="HP" type="Label" parent="BattleControl/BattleScreen/PlayPoke"]
+margin_left = 6.0
+margin_top = 16.0
+margin_right = 31.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 4 )
+text = "HP:"
+
+[node name="HpProgress" type="HBoxContainer" parent="BattleControl/BattleScreen/PlayPoke"]
+margin_left = 62.0
+margin_top = 26.0
+margin_right = 95.0
+margin_bottom = 38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cvalue" type="Label" parent="BattleControl/BattleScreen/PlayPoke/HpProgress"]
+margin_right = 10.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 4 )
+text = "25"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slash" type="Label" parent="BattleControl/BattleScreen/PlayPoke/HpProgress"]
+margin_left = 14.0
+margin_right = 19.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 4 )
+text = "/"
+
+[node name="Mvalue" type="Label" parent="BattleControl/BattleScreen/PlayPoke/HpProgress"]
+margin_left = 23.0
+margin_right = 33.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 4 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpBar" type="ProgressBar" parent="BattleControl/BattleScreen/PlayPoke"]
+margin_left = 20.0
+margin_top = 16.0
+margin_right = 97.0
+margin_bottom = 28.0
+theme = SubResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+value = 100.0
+allow_lesser = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OppPoke" type="Panel" parent="BattleControl/BattleScreen"]
+margin_left = 15.0
+margin_top = 11.0
+margin_right = 117.0
+margin_bottom = 51.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="BattleControl/BattleScreen/OppPoke"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 4 )
+text = "Meowth"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="BattleControl/BattleScreen/OppPoke"]
+margin_left = 68.0
+margin_top = 5.0
+margin_right = 93.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 4 )
+text = "Lv100"
+
+[node name="HP" type="Label" parent="BattleControl/BattleScreen/OppPoke"]
+margin_left = 6.0
+margin_top = 16.0
+margin_right = 31.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 4 )
+text = "HP:"
+
+[node name="HpProgress" type="HBoxContainer" parent="BattleControl/BattleScreen/OppPoke"]
+margin_left = 62.0
+margin_top = 26.0
+margin_right = 95.0
+margin_bottom = 38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cvalue" type="Label" parent="BattleControl/BattleScreen/OppPoke/HpProgress"]
+margin_right = 10.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 4 )
+text = "25"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slash" type="Label" parent="BattleControl/BattleScreen/OppPoke/HpProgress"]
+margin_left = 14.0
+margin_right = 19.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 4 )
+text = "/"
+
+[node name="Mvalue" type="Label" parent="BattleControl/BattleScreen/OppPoke/HpProgress"]
+margin_left = 23.0
+margin_right = 33.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 4 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpBar" type="ProgressBar" parent="BattleControl/BattleScreen/OppPoke"]
+margin_left = 20.0
+margin_top = 18.0
+margin_right = 97.0
+margin_bottom = 27.0
+theme = SubResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StandbyMenu" type="Control" parent="BattleControl"]
+visible = false
+anchor_top = 3.29
+anchor_right = 6.394
+anchor_bottom = 4.8
+margin_left = 86.0
+margin_top = 60.4
+margin_right = -169.76
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectAction" type="Panel" parent="BattleControl/StandbyMenu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 84.0
+margin_top = -59.0
+margin_right = 170.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectActionContainer" type="VBoxContainer" parent="BattleControl/StandbyMenu/SelectAction"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 5.0
+margin_right = -11.0
+margin_bottom = -5.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionFight" type="RichTextLabel" parent="BattleControl/StandbyMenu/SelectAction/SelectActionContainer"]
+margin_right = 50.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 25, 13 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Fight"
+
+[node name="OptionBag" type="RichTextLabel" parent="BattleControl/StandbyMenu/SelectAction/SelectActionContainer"]
+margin_top = 13.0
+margin_right = 50.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 25, 13 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Bag"
+
+[node name="OptionPokemon" type="RichTextLabel" parent="BattleControl/StandbyMenu/SelectAction/SelectActionContainer"]
+margin_top = 26.0
+margin_right = 50.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 25, 13 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Pokémon"
+
+[node name="OptionRun" type="RichTextLabel" parent="BattleControl/StandbyMenu/SelectAction/SelectActionContainer"]
+margin_top = 39.0
+margin_right = 50.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 25, 13 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Run"
+
+[node name="ArrowSelect" type="TextureRect" parent="BattleControl/StandbyMenu/SelectAction"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 23.0
+margin_bottom = 16.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StandbyPromptPanel" type="Panel" parent="BattleControl/StandbyMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -85.0
+margin_top = -59.0
+margin_right = 85.0
+custom_styles/panel = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StandbyPrompt" type="RichTextLabel" parent="BattleControl/StandbyMenu/StandbyPromptPanel"]
+modulate = Color( 0.137255, 0.117647, 0.117647, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 23.0
+margin_bottom = -23.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "What will Pokémon do..."
+
+[node name="MoveSelectMenu" type="Control" parent="BattleControl"]
+visible = false
+margin_left = 86.0
+margin_top = 192.0
+margin_right = 86.0
+margin_bottom = 192.0
+script = ExtResource( 13 )
+
+[node name="MoveSelect" type="Panel" parent="BattleControl/MoveSelectMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -86.0
+margin_top = -59.0
+margin_right = 84.0
+custom_styles/panel = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveBox" type="GridContainer" parent="BattleControl/MoveSelectMenu/MoveSelect"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 162.0
+margin_bottom = 54.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move1" type="Button" parent="BattleControl/MoveSelectMenu/MoveSelect/MoveBox"]
+margin_right = 75.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 75, 19 )
+custom_fonts/font = SubResource( 6 )
+text = "Hydro Pump"
+
+[node name="Move2" type="Button" parent="BattleControl/MoveSelectMenu/MoveSelect/MoveBox"]
+margin_left = 79.0
+margin_right = 154.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 75, 19 )
+custom_fonts/font = SubResource( 6 )
+text = "Hydro Pump"
+
+[node name="Move3" type="Button" parent="BattleControl/MoveSelectMenu/MoveSelect/MoveBox"]
+margin_top = 23.0
+margin_right = 75.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 75, 19 )
+custom_fonts/font = SubResource( 6 )
+text = "Hydro Pump"
+
+[node name="Move4" type="Button" parent="BattleControl/MoveSelectMenu/MoveSelect/MoveBox"]
+margin_left = 79.0
+margin_top = 23.0
+margin_right = 154.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 75, 19 )
+custom_fonts/font = SubResource( 6 )
+text = "Hydro Pump"
+
+[node name="ArrowSelect" type="TextureRect" parent="BattleControl/MoveSelectMenu/MoveSelect"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 86.0
+margin_bottom = 18.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveInfo" type="Panel" parent="BattleControl/MoveSelectMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 84.0
+margin_top = -59.0
+margin_right = 170.0
+custom_styles/panel = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MovePP" type="HBoxContainer" parent="BattleControl/MoveSelectMenu/MoveInfo"]
+margin_left = 11.0
+margin_top = 14.0
+margin_right = 74.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PPLabel" type="Label" parent="BattleControl/MoveSelectMenu/MoveInfo/MovePP"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 12.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 8 )
+text = "PP"
+
+[node name="PPInfo" type="Label" parent="BattleControl/MoveSelectMenu/MoveInfo/MovePP"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 16.0
+margin_right = 42.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 8 )
+text = "40/40"
+
+[node name="MoveType" type="HBoxContainer" parent="BattleControl/MoveSelectMenu/MoveInfo"]
+margin_left = 11.0
+margin_top = 31.0
+margin_right = 74.0
+margin_bottom = 44.0
+
+[node name="TypeLabel" type="Label" parent="BattleControl/MoveSelectMenu/MoveInfo/MoveType"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 30.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 8 )
+text = "Type/"
+
+[node name="TypeInfo" type="Label" parent="BattleControl/MoveSelectMenu/MoveInfo/MoveType"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 34.0
+margin_right = 68.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 8 )
+text = "Normal"
+
+[node name="BattleDialog" type="Control" parent="BattleControl"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="BattleControl/BattleDialog"]
+
+[node name="BattleTextBox" type="MarginContainer" parent="BattleControl/BattleDialog"]
+light_mask = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 93.0
+margin_right = 216.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePanel" type="Panel" parent="BattleControl/BattleDialog/BattleTextBox"]
+margin_right = 256.0
+margin_bottom = 59.0
+custom_styles/panel = ExtResource( 8 )
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleControl/BattleDialog/BattleTextBox"]
+margin_right = 256.0
+margin_bottom = 59.0
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="MarginCheckPanel" type="Panel" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 56.0
+
+[node name="TextBox" type="HBoxContainer" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 56.0
+
+[node name="Start" type="Label" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer/TextBox"]
+margin_right = 13.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "*"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BattleLog" type="Label" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer/TextBox"]
+margin_left = 17.0
+margin_right = 233.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "This is the battle log:"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="End" type="Label" parent="BattleControl/BattleDialog/BattleTextBox/MarginContainer/TextBox"]
+margin_left = 237.0
+margin_top = 41.0
+margin_right = 250.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 13, 0 )
+size_flags_vertical = 8
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "v"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Timer" type="Timer" parent="BattleControl/BattleDialog"]
+one_shot = true
+
+[node name="SelectPokeMenu" type="Control" parent="BattleControl"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BasePanel" type="Panel" parent="BattleControl/SelectPokeMenu"]
+margin_right = 256.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PartyContainer" type="GridContainer" parent="BattleControl/SelectPokeMenu/BasePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 49.0
+margin_top = 55.0
+margin_right = -43.0
+margin_bottom = -54.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke1" type="Button" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer"]
+margin_right = 80.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "First Option"
+
+[node name="HP1" type="Label" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer/Poke1"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 1 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke2" type="Button" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer"]
+margin_left = 84.0
+margin_right = 164.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Second Option"
+
+[node name="HP2" type="Label" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer/Poke2"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 1 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke3" type="Button" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer"]
+margin_top = 29.0
+margin_right = 80.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Third Option"
+
+[node name="HP3" type="Label" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer/Poke3"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 1 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke4" type="Button" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer"]
+margin_left = 84.0
+margin_top = 29.0
+margin_right = 164.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Fourth Option"
+
+[node name="HP4" type="Label" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer/Poke4"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 1 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke5" type="Button" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer"]
+margin_top = 58.0
+margin_right = 80.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Fifth Option"
+
+[node name="HP5" type="Label" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer/Poke5"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 1 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke6" type="Button" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer"]
+margin_left = 84.0
+margin_top = 58.0
+margin_right = 164.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sixth Option"
+
+[node name="HP6" type="Label" parent="BattleControl/SelectPokeMenu/BasePanel/PartyContainer/Poke6"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 1 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" type="TextureRect" parent="BattleControl/SelectPokeMenu/BasePanel"]
+margin_left = 120.0
+margin_top = 59.0
+margin_right = 144.0
+margin_bottom = 99.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="allPrinted" from="BattleControl/BattleDialog" to="BattleControl" method="_on_BattleDialog_allPrinted"]
+[connection signal="tween_completed" from="BattleControl/BattleDialog/Tween" to="BattleControl/BattleDialog" method="_on_Tween_tween_completed"]
+[connection signal="timeout" from="BattleControl/BattleDialog/Timer" to="BattleControl/BattleDialog" method="_on_Timer_timeout"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red_flower_optimized.png-f8a1b01d46b0fcf33624d80eab27beac.stex"
+path="res://.import/red_flower_optimized.png-96ccb7992de83e168f23c43a24e57017.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/red_flower_optimized.png"
-dest_files=[ "res://.import/red_flower_optimized.png-f8a1b01d46b0fcf33624d80eab27beac.stex" ]
+source_file="res://Sprites/Tileset/red_flower_optimized.png"
+dest_files=[ "res://.import/red_flower_optimized.png-96ccb7992de83e168f23c43a24e57017.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tall_grass.png-94a05e756d64d19304f8597c31d5da77.stex"
+path="res://.import/tall_grass.png-120e0e904b97e7d7c868c5f05696f1ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/tall_grass.png"
-dest_files=[ "res://.import/tall_grass.png-94a05e756d64d19304f8597c31d5da77.stex" ]
+source_file="res://Sprites/Tileset/tall_grass.png"
+dest_files=[ "res://.import/tall_grass.png-120e0e904b97e7d7c868c5f05696f1ea.stex" ]
 
 [params]
 

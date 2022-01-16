@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://fonts/pkmnfl.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/pkmnfl.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/menu/menu_box_1.png" type="Texture" id=2]
 [ext_resource path="res://sprites/menu/ui_arrow_left_right.png" type="Texture" id=3]
-[ext_resource path="res://menu/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 resource_local_to_scene = true

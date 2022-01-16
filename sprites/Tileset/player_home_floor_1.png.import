@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_home_floor_1.png-a985ca081448f17e9ea25df2df3d02aa.stex"
+path="res://.import/player_home_floor_1.png-de6758bd7a2999dad2b832838fbea3a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/player_home_floor_1.png"
-dest_files=[ "res://.import/player_home_floor_1.png-a985ca081448f17e9ea25df2df3d02aa.stex" ]
+source_file="res://Sprites/Tileset/player_home_floor_1.png"
+dest_files=[ "res://.import/player_home_floor_1.png-de6758bd7a2999dad2b832838fbea3a6.stex" ]
 
 [params]
 

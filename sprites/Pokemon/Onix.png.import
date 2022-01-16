@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Onix.png-ed1b784fc61b478488456c9aa2bf47e7.stex"
+path="res://.import/Onix.png-656c8c2c0816f6a2de81c50bf2ea2172.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Pokemon/Onix.png"
-dest_files=[ "res://.import/Onix.png-ed1b784fc61b478488456c9aa2bf47e7.stex" ]
+source_file="res://Sprites/Pokemon/Onix.png"
+dest_files=[ "res://.import/Onix.png-656c8c2c0816f6a2de81c50bf2ea2172.stex" ]
 
 [params]
 

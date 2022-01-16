@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meowthfront.png-f26d0dbc50c2a9f7646be5ea43b3cfdb.stex"
+path="res://.import/meowthfront.png-9df2ee6e41baa0b5e2fd2a5798863cdf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/battle/pokesprites/meowthfront.png"
-dest_files=[ "res://.import/meowthfront.png-f26d0dbc50c2a9f7646be5ea43b3cfdb.stex" ]
+source_file="res://Sprites/battle/pokesprites/meowthfront.png"
+dest_files=[ "res://.import/meowthfront.png-9df2ee6e41baa0b5e2fd2a5798863cdf.stex" ]
 
 [params]
 

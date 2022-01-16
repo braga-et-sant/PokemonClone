@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/X-Scizzor.png-861351f5cf9fad8f39c41c664d264191.stex"
+path="res://.import/X-Scizzor.png-a016a73c3d199f788ac91be99b74caf9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/battle/anims/X-Scizzor.png"
-dest_files=[ "res://.import/X-Scizzor.png-861351f5cf9fad8f39c41c664d264191.stex" ]
+source_file="res://Sprites/battle/anims/X-Scizzor.png"
+dest_files=[ "res://.import/X-Scizzor.png-a016a73c3d199f788ac91be99b74caf9.stex" ]
 
 [params]
 

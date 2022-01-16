@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://overworld/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://overworld/OverworldTileMap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://overworld/LedgeTileMap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://overworld/tree.tscn" type="PackedScene" id=4]
-[ext_resource path="res://overworld/Flowers.tscn" type="PackedScene" id=5]
-[ext_resource path="res://overworld/TallGrass.tscn" type="PackedScene" id=6]
-[ext_resource path="res://overworld/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Overworld/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Overworld/OverworldTileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Overworld/LedgeTileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Overworld/tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Overworld/Flowers.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Overworld/TallGrass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Overworld/Door.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/Tileset/oaks_lab.png" type="Texture" id=8]
-[ext_resource path="res://overworld/House.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Overworld/House.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 224, 128 )

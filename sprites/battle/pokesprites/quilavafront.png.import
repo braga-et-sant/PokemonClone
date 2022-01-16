@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quilavafront.png-3483bbb5dbf9b18c55d00d1e1cff83ec.stex"
+path="res://.import/quilavafront.png-ae20c189fa484fa72466dbcba35c19ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/battle/pokesprites/quilavafront.png"
-dest_files=[ "res://.import/quilavafront.png-3483bbb5dbf9b18c55d00d1e1cff83ec.stex" ]
+source_file="res://Sprites/battle/pokesprites/quilavafront.png"
+dest_files=[ "res://.import/quilavafront.png-ae20c189fa484fa72466dbcba35c19ab.stex" ]
 
 [params]
 

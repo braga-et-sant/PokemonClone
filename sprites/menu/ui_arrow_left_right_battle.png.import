@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui_arrow_left_right_battle.png-6910e0298dbac64c4d9652441a88f2c8.stex"
+path="res://.import/ui_arrow_left_right_battle.png-12e453805949472cd89fa0d4a4c0ec34.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/ui_arrow_left_right_battle.png"
-dest_files=[ "res://.import/ui_arrow_left_right_battle.png-6910e0298dbac64c4d9652441a88f2c8.stex" ]
+source_file="res://Sprites/menu/ui_arrow_left_right_battle.png"
+dest_files=[ "res://.import/ui_arrow_left_right_battle.png-12e453805949472cd89fa0d4a4c0ec34.stex" ]
 
 [params]
 

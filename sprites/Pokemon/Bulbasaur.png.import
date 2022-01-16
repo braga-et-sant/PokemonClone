@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bulbasaur.png-665de09dfa8486afed885f7b7ed83b5c.stex"
+path="res://.import/Bulbasaur.png-4e07a467e7c8980d3ff65b2dbda6a436.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Pokemon/Bulbasaur.png"
-dest_files=[ "res://.import/Bulbasaur.png-665de09dfa8486afed885f7b7ed83b5c.stex" ]
+source_file="res://Sprites/Pokemon/Bulbasaur.png"
+dest_files=[ "res://.import/Bulbasaur.png-4e07a467e7c8980d3ff65b2dbda6a436.stex" ]
 
 [params]
 
