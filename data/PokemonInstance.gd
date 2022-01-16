@@ -39,11 +39,10 @@ func genWild(poke_n : int) -> pokemon_instance:
 	randomize()
 	level = randi()%10+1
 	
-	moves = makeMoveList(poke, level)
-	print(moves)
+	moves = makeMoveList(poke)
 	return self
 	
-func makeMoveList(poke, level):
+func makeMoveList(poke):
 	var moveDb = MoveDataBase.new()
 	var learnset = poke.moveset
 	var limit = level
@@ -51,7 +50,6 @@ func makeMoveList(poke, level):
 	var mindex = 0
 	for m in learnset:
 		if(m.level <= limit):
-			print("Im here")
 			movelistcur.insert(mindex, moveDb.get_move_by_name(m.move))
 			mindex = mindex+1 if (mindex < 3) else 0 
 		else:
@@ -67,7 +65,3 @@ func _to_string():
 	var p5 = str(ivs)
 	return p1 + p2 + "\nRawStats\n" + p3 + "\nEVs\n" + p4 + "\nIVs\n" + p5
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass

@@ -34,10 +34,5 @@ static func get_move_by_name(name):
 	return move
 	
 func _ready():
-	var move = get_move_by_name("Ember")
-	print(move.name)
-	print(move.type)
-	var move2 = get_move_by_name("Ice Beam")
-	print(move2.name)
-	print(move2.type)
+	pass
 	

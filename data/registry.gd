@@ -7,5 +7,5 @@ const pokemon = {
 	4: "Farfetchd"
 }
 static func get_pokemon_class(id):
-	print("res://data/Pokemon" + pokemon[id] + ".gd")
+	#("res://data/Pokemon" + pokemon[id] + ".gd")
 	return load("res://data/Pokemon/" + pokemon[id] + ".gd").new()

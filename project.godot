@@ -101,6 +101,12 @@ enabled=PoolStringArray(  )
 display=false
 load=false
 
+[importer_defaults]
+
+texture={
+"flags/filter": false
+}
+
 [input]
 
 menu={

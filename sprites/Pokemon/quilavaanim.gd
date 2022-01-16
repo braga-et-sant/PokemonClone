@@ -2,7 +2,7 @@ extends Node2D
 
 
 var count
-var limit = 6
+var limit = 4
 var flag
 
 var animtype
@@ -24,11 +24,22 @@ func setup():
 	get_node(other).queue_free()
 	
 	var animIdle = $AnimationPlayer.get_animation("idle" + animtype)
+	var animRare = $AnimationPlayer.get_animation("rare" + animtype)
 	
 	var index = animIdle.add_track(Animation.TYPE_METHOD)
 	animIdle.track_set_path(index, ".")
 	animIdle.track_insert_key(index, animIdle.length, {"method" : "animloop" , "args" : []} )
 	
+	var index2 = animRare.add_track(Animation.TYPE_METHOD)
+	animRare.track_set_path(index2, ".")
+	animRare.track_insert_key(index2, animRare.length, {"method" : "animloop" , "args" : []} )
+	
+	
 
 func animloop():
-	$AnimationPlayer.play("idle" + animtype)
+	if(count == limit):
+		count = 0
+		$AnimationPlayer.play("rare" + animtype)
+	else:
+		count +=1
+		$AnimationPlayer.play("idle" + animtype)

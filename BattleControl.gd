@@ -3,8 +3,12 @@ extends Control
 enum BattleState {STANDBY, MOVE_SELECT, POKEMON_SELECT, ITEM_SELECT, RUN, DO_MOVE}
 var curState = BattleState.STANDBY
 
-var pokeOpp = pokemon_instance.new().genWild(4)
-var pokePlayer = pokemon_instance.new().genWild(1)
+var teamPlayer = [pokemon_instance.new().genWild(4), pokemon_instance.new().genWild(3), pokemon_instance.new().genWild(2), pokemon_instance.new().genWild(1)]
+var teamEnemy = [pokemon_instance.new().genWild(1), pokemon_instance.new().genWild(2), pokemon_instance.new().genWild(3), pokemon_instance.new().genWild(4)]
+var pokeOpp = teamEnemy[0]
+var pokePlayer = teamPlayer[0]
+
+
 
 var pokeSprite
 var oppSprite
@@ -40,16 +44,30 @@ var moveIndex = MoveOption.M1
 var dialogDone = false
 onready var battleDialog = $BattleDialog
 
+#Switch Menu
+onready var selectMenu = $Switch
+onready var switchArrow = $Switch/BasePanel/Arrow
+
+enum SwitchOption {P1, P2, P3, P4, P5, P6}
+var switchIndex = SwitchOption.P1
+
+const SWITCHARROWDEFAULT = Vector2(37, 58)
+
+
 func _ready():
 	arrow.rect_position.y = ARROWDEFAULT # 13 between select
 	moveArrow.rect_position = MOVEARROWDEFAULT
 	standByMenu.visible = true
 	moveMenu.visible = false
+	selectMenu.visible = false
 	
 	setupPlayer()
 	setupOpp()
+	setupSwitch()
 	
 func setupPlayer() -> void:
+	
+	pokePlayer = teamPlayer[0]
 	
 	$StandbyMenu/MessageBox/StandbyPrompt.text = "What will " + pokePlayer.nick + " do?"
 	
@@ -65,10 +83,11 @@ func setupPlayer() -> void:
 	
 	var filepath = regist.get_pokemon_class(pokePlayer.ID).spritenode
 	
+	$BattleScreen.remove_child(pokeSprite)
 	pokeSprite = load(filepath).instance()
 	pokeSprite.flag = 0
 	pokeSprite.position = ($BattleScreen/PlaySprite.position)
-	$BattleScreen/PlaySprite.queue_free()
+	$BattleScreen/PlaySprite.visible = false
 	$BattleScreen.add_child(pokeSprite)
 	
 	
@@ -84,7 +103,7 @@ func setupOpp() -> void:
 	oppSprite = load(filepath).instance()
 	oppSprite.flag = 1
 	oppSprite.position = ($BattleScreen/OppSprite.position)
-	$BattleScreen/OppSprite.queue_free()
+	$BattleScreen/OppSprite.visible = false
 	$BattleScreen.add_child(oppSprite)
 	
 func updateGameState() -> void:
@@ -101,7 +120,19 @@ func oppMoveAI():
 	var moveIn = randi()%3+1
 	var oppMove = {"move": pokeOpp.moves[moveIn], "self": pokeOpp, "target": pokePlayer}
 	return oppMove
-	
+
+func setupSwitch():
+	var grid = $Switch/BasePanel/PartyContainer
+	var count = 0
+	for child in grid.get_children():
+		if(count != teamPlayer.size() and teamPlayer[count] != null):
+			child.text = teamPlayer[count].nick
+			child.get_child(0).text = str(teamPlayer[count].chp) + "/" + str(teamPlayer[count].rawstats["hp"])
+			count+=1
+		else:
+			child.text = "		-		"
+			child.get_child(0).text = ""
+			
 func executeBattle(move : Move) -> void:
 	var battleQueue = []
 	var myMove = {"move": move, "self": pokePlayer, "target": pokeOpp}
@@ -129,35 +160,71 @@ func executeBattleQueue(battleQueue):
 		
 	
 func changeArrowPosMove(index : int ) -> void:
-	var curmove = 0
+	moveIndex = index
 	match index:
 		MoveOption.M1:
 			moveArrow.rect_position = Vector2(7, 7)
-			curmove = 0
 		MoveOption.M2:
 			moveArrow.rect_position = Vector2(80, 7)
-			curmove = 1
 		MoveOption.M3:
 			moveArrow.rect_position = Vector2(7, 31)
-			curmove = 2
 		MoveOption.M4:
-			curmove = 3
 			moveArrow.rect_position = Vector2(80, 31)
-			
-	ppValue.text = str(pokePlayer.moves[curmove].total_pp) + "/" + str(pokePlayer.moves[curmove].total_pp)
-	typeInfo.text = TypeStr.new().toStr(pokePlayer.moves[curmove].type)
+	ppValue.text = str(pokePlayer.moves[index].total_pp) + "/" + str(pokePlayer.moves[index].total_pp)
+	typeInfo.text = TypeStr.new().toStr(pokePlayer.moves[index].type)
 		
+func changeArrowPosSwitch(index : int ) -> void:
+	match index:
+		SwitchOption.P1:
+			switchArrow.rect_position = Vector2(37, 58)
+		SwitchOption.P2:
+			switchArrow.rect_position = Vector2(120, 58)
+		SwitchOption.P3:
+			switchArrow.rect_position = Vector2(37, 88)
+		SwitchOption.P4:
+			switchArrow.rect_position = Vector2(120, 88)
+		SwitchOption.P5:
+			switchArrow.rect_position = Vector2(37, 118)
+		SwitchOption.P6:
+			switchArrow.rect_position = Vector2(120, 118)
+	switchIndex = index
+	
+func switchPokemon() -> void:
+	
+	if(switchIndex >= teamPlayer.size()):
+		print("Empty Slot")
+		return
+	elif(switchIndex == 0):
+		print("Same mon")
+		return
+		
+	var temp = teamPlayer[0]
+	teamPlayer[0] = teamPlayer[switchIndex]
+	teamPlayer[switchIndex] = temp
+	
+	setupPlayer()
+	
+	
+	var aiMove = []
+	aiMove.append(oppMoveAI())
+	print(aiMove.size())
+	executeBattleQueue(aiMove)
+	
+	transistionState(BattleState.POKEMON_SELECT, BattleState.STANDBY)
 	
 func transistionState(current: int, next: int) -> void:
 	match current:
 		BattleState.STANDBY:
 			standByMenu.visible = false
-			standbyIndex = 0
+			
 		BattleState.MOVE_SELECT:
 			moveMenu.visible = false
 			moveIndex = 0
 		BattleState.DO_MOVE:
 			battleDialog.visible = false
+		BattleState.POKEMON_SELECT:
+			selectMenu.visible = false
+			switchIndex = 0
 		
 	match next:
 		BattleState.STANDBY:
@@ -169,6 +236,10 @@ func transistionState(current: int, next: int) -> void:
 		BattleState.DO_MOVE:
 			battleDialog.visible = true
 			curState = BattleState.DO_MOVE
+		BattleState.POKEMON_SELECT:
+			setupSwitch()
+			selectMenu.visible = true
+			curState = BattleState.POKEMON_SELECT
 			
 func _unhandled_input(event):
 	match curState:
@@ -190,12 +261,12 @@ func _unhandled_input(event):
 				match standbyIndex:
 					StandbyOption.FIGHT:
 						transistionState(BattleState.STANDBY, BattleState.MOVE_SELECT)
-						
 						changeArrowPosMove(0)
 					StandbyOption.BAG:
 						pass
 					StandbyOption.POKEMON:
-						pass
+						transistionState(BattleState.STANDBY, BattleState.POKEMON_SELECT)
+						changeArrowPosSwitch(0)
 					StandbyOption.RUN:
 						pass
 						
@@ -231,7 +302,58 @@ func _unhandled_input(event):
 		BattleState.DO_MOVE:
 			if(event.is_action_pressed("ui_cancel") || event.is_action_pressed("ui_select")):
 				pass#transistionState(BattleState.DO_MOVE, BattleState.STANDBY)
-			
+		BattleState.POKEMON_SELECT:
+			if event.is_action_pressed("ui_up") :
+				match switchIndex:
+					SwitchOption.P1:
+						switchIndex = SwitchOption.P5
+					SwitchOption.P2:
+						switchIndex = SwitchOption.P6
+					SwitchOption.P3:
+						switchIndex = SwitchOption.P1
+					SwitchOption.P4:	
+						switchIndex = SwitchOption.P2
+					SwitchOption.P5:	
+						switchIndex = SwitchOption.P3
+					SwitchOption.P6:	
+						switchIndex = SwitchOption.P4
+				changeArrowPosSwitch(switchIndex)
+			if event.is_action_pressed("ui_down") :
+				match switchIndex:
+					SwitchOption.P1:
+						switchIndex = SwitchOption.P3
+					SwitchOption.P2:
+						switchIndex = SwitchOption.P4
+					SwitchOption.P3:
+						switchIndex = SwitchOption.P5
+					SwitchOption.P4:	
+						switchIndex = SwitchOption.P6
+					SwitchOption.P5:	
+						switchIndex = SwitchOption.P1
+					SwitchOption.P6:	
+						switchIndex = SwitchOption.P2
+				changeArrowPosSwitch(switchIndex)
+			elif(event.is_action_pressed("ui_left") || event.is_action_pressed("ui_right")):
+				match switchIndex:
+					SwitchOption.P1:	
+						switchIndex = SwitchOption.P2
+					SwitchOption.P2:	
+						switchIndex = SwitchOption.P1
+					SwitchOption.P3:	
+						switchIndex = SwitchOption.P4
+					SwitchOption.P4:	
+						switchIndex = SwitchOption.P3
+					SwitchOption.P5:	
+						switchIndex = SwitchOption.P6
+					SwitchOption.P6:	
+						switchIndex = SwitchOption.P5
+				changeArrowPosSwitch(switchIndex)	
+			elif(event.is_action_pressed("ui_cancel")):
+				transistionState(BattleState.POKEMON_SELECT, BattleState.STANDBY)
+			elif(event.is_action_pressed("ui_select")):
+				print("Selected option:")
+				print(switchIndex)
+				switchPokemon()
 
 
 func _on_BattleDialog_allPrinted():

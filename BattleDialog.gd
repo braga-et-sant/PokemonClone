@@ -21,7 +21,7 @@ var text_queue = []
 func _ready():
 	hide_textbox()
 
-func _process(delta):
+func _process(_delta):
 	match current_state:
 		State.READY:
 			if !text_queue.empty():
@@ -68,7 +68,7 @@ func change_state(next_state):
 		State.FINISHED:
 			pass#print("Changing state to: State.FINISHED")
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	end_symbol.text = "v"
 	change_state(State.FINISHED)
 	$Timer.start(0.8)

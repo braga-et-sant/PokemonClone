@@ -6,7 +6,7 @@ var name = "Quilava"
 # Pokedex ID#
 var ID = 3
 
-var spritenode = "res://sprites/Pokemon/Meowth.tscn"
+var spritenode = "res://sprites/Pokemon/Quilava.tscn"
 
 # The pokemon's type. If only one type use type1
 var type1 = Type.FIRE
@@ -55,3 +55,9 @@ var catch_rate = 45
 var weight = 65.1
 
 # Moveset by leveling
+var moveset = [
+	MoveSet.new(1, "Ice Beam"),
+	MoveSet.new(1, "Hydro Pump"),
+	MoveSet.new(1, "Ember"),
+	MoveSet.new(1, "Thunder Shock"),
+]

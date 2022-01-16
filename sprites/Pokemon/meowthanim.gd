@@ -14,11 +14,11 @@ func _ready():
 		print("No base sprite set, loading back")
 		flag = 0
 	
-	setup(flag)
+	setup()
 	
 	animloop()
 	
-func setup(flag : int):
+func setup():
 	animtype = "back" if (flag == 0) else "front"
 	var other = "Back" if (flag == 1) else "Front"
 	get_node(other).queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://sprites/Pokemon/meowthback.png" type="Texture" id=1]
 [ext_resource path="res://styles/pokemonfont.tres" type="DynamicFont" id=2]
@@ -42,6 +42,10 @@ load_path = "res://.import/ui_arrow_left_right_battle.png-4dd867c0c2c3fd91912c68
 size = 10
 font_data = SubResource( 1 )
 
+[sub_resource type="StreamTexture" id=9]
+flags = 4
+load_path = "res://.import/ui_arrow_left_right.png-775406bab18b0845124ade7566e8c225.stex"
+
 [node name="BattleSceneNode" type="Node2D"]
 
 [node name="BattleControl" type="Control" parent="."]
@@ -52,7 +56,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BattleScreen" type="CanvasLayer" parent="BattleControl"]
+[node name="BattleScreen" type="Control" parent="BattleControl"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayBase" type="Sprite" parent="BattleControl/BattleScreen"]
 position = Vector2( 65, 118 )
@@ -567,6 +574,170 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="BattleControl/BattleDialog"]
 one_shot = true
+
+[node name="Switch" type="Control" parent="BattleControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BasePanel" type="Panel" parent="BattleControl/Switch"]
+margin_right = 256.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PartyContainer" type="GridContainer" parent="BattleControl/Switch/BasePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 49.0
+margin_top = 55.0
+margin_right = -43.0
+margin_bottom = -54.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke1" type="Button" parent="BattleControl/Switch/BasePanel/PartyContainer"]
+margin_right = 80.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 2 )
+text = "First Option"
+
+[node name="HP1" type="Label" parent="BattleControl/Switch/BasePanel/PartyContainer/Poke1"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 2 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke2" type="Button" parent="BattleControl/Switch/BasePanel/PartyContainer"]
+margin_left = 84.0
+margin_right = 164.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 2 )
+text = "Second Option"
+
+[node name="HP2" type="Label" parent="BattleControl/Switch/BasePanel/PartyContainer/Poke2"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 2 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke3" type="Button" parent="BattleControl/Switch/BasePanel/PartyContainer"]
+margin_top = 29.0
+margin_right = 80.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 2 )
+text = "Third Option"
+
+[node name="HP3" type="Label" parent="BattleControl/Switch/BasePanel/PartyContainer/Poke3"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 2 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke4" type="Button" parent="BattleControl/Switch/BasePanel/PartyContainer"]
+margin_left = 84.0
+margin_top = 29.0
+margin_right = 164.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 2 )
+text = "Fourth Option"
+
+[node name="HP4" type="Label" parent="BattleControl/Switch/BasePanel/PartyContainer/Poke4"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 2 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke5" type="Button" parent="BattleControl/Switch/BasePanel/PartyContainer"]
+margin_top = 58.0
+margin_right = 80.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 2 )
+text = "Fifth Option"
+
+[node name="HP5" type="Label" parent="BattleControl/Switch/BasePanel/PartyContainer/Poke5"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 2 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poke6" type="Button" parent="BattleControl/Switch/BasePanel/PartyContainer"]
+margin_left = 84.0
+margin_top = 58.0
+margin_right = 164.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 80, 25 )
+custom_fonts/font = ExtResource( 2 )
+text = "Sixth Option"
+
+[node name="HP6" type="Label" parent="BattleControl/Switch/BasePanel/PartyContainer/Poke6"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -12.0
+custom_fonts/font = ExtResource( 2 )
+text = "20/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" type="TextureRect" parent="BattleControl/Switch/BasePanel"]
+margin_left = 120.0
+margin_top = 59.0
+margin_right = 144.0
+margin_bottom = 99.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="allPrinted" from="BattleControl/BattleDialog" to="BattleControl" method="_on_BattleDialog_allPrinted"]
 [connection signal="tween_completed" from="BattleControl/BattleDialog/Tween" to="BattleControl/BattleDialog" method="_on_Tween_tween_completed"]

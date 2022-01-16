@@ -6,7 +6,7 @@ var name = "Celebi"
 # Pokedex ID#
 var ID = 2
 
-var spritenode = "res://sprites/Pokemon/Meowth.tscn"
+var spritenode = "res://sprites/Pokemon/Celebi.tscn"
 
 # The pokemon's type. If only one type use type1
 var type1 = Type.ELECTRIC
