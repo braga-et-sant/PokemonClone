@@ -53,15 +53,12 @@ func get_input_direction():
 	)
 
 func interact_ahead():
-	set_process(false)
+	set_physics_process(false)
 	var target = Map.look_ahead(self, facingDir)
-	print(target)
 	if target:
 		if target.has_method("interact"):
 			target.interact(facingDir)
 		else:
 			print("This target has no interact method")
-	else:
-		print("there's nothing ahead")
 	yield(get_tree().create_timer(0.1), "timeout")	
-	set_process(true)
+	set_physics_process(true)

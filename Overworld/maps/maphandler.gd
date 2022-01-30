@@ -32,24 +32,15 @@ func request_move(pawn, direction):
 	var cell_target_col = collision.get_cellv(cell_target)
 	
 	if(cell_target in objects_pos):
-		print("Ahead is an object")
-		print(cell_target)
-		print(objects_pos)
-		print("Btw that object happens to be...")
 		var objfound = findObj(cell_target)
 		print(objfound.name)
 	elif cell_target in actors_pos:
-		print("Ahead is an actor")
-		print(cell_target)
-		print(actors_pos)
-		print("Btw that actor happens to be...")
 		var actfound = findActor(cell_target)
 		var actname = "" if actfound == null else actfound.name
 		print(actname)
 	elif cell_target_ground != -1 and cell_target_col == -1:
 		return update_pawn_position(pawn, cell_start, cell_target)
 	else:
-		print("Ahead is void or a collidable")
 		print(cell_target_ground)
 		print(cell_target_col)
 		
@@ -58,19 +49,11 @@ func look_ahead(pawn, direction):
 	var cell_target = cell_start + direction
 	if(cell_target in objects_pos):
 		print("Ahead is an object")
-		print(cell_target)
-		print(objects_pos)
-		print("Btw that object happens to be...")
 		var objfound = findObj(cell_target)
 		return objfound
 	elif cell_target in actors_pos:
 		print("Ahead is an actor")
-		print(cell_target)
-		print(actors_pos)
-		print("Btw that actor happens to be...")
 		var actfound = findActor(cell_target)
-		var actname = "" if actfound == null else actfound.name
-		print(actname)
 		return actfound
 	else:
 		print("There's nothing ahead")
@@ -84,7 +67,6 @@ func update_pawn_position(_pawn, cell_start, cell_target):
 func findObj(coords):
 	for child in objects.get_children():
 		if ground.world_to_map(child.position) == coords:
-			print(child)
 			return child
 
 func findActor(coords):

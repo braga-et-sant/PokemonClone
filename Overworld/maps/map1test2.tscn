@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Overworld/maps/maphandler.gd" type="Script" id=1]
 [ext_resource path="res://TiledProject/images/hgssmisc.png" type="Texture" id=2]
-[ext_resource path="res://Styles/32xgrid.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/32xgrid.png" type="Texture" id=3]
 [ext_resource path="res://TiledProject/images/hgssbuildings2.png" type="Texture" id=4]
 [ext_resource path="res://TiledProject/images/hgssgrounds.png" type="Texture" id=5]
 [ext_resource path="res://TiledProject/images/hgsstrees.png" type="Texture" id=6]

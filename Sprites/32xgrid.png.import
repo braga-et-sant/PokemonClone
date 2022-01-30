@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/water_tileset6.png-ed37dd793b01c58046c54efd93fc89ad.stex"
+path="res://.import/32xgrid.png-df80b7a7b7dd1284ae028641a33e5c16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tileset/water_tileset6.png"
-dest_files=[ "res://.import/water_tileset6.png-ed37dd793b01c58046c54efd93fc89ad.stex" ]
+source_file="res://Sprites/32xgrid.png"
+dest_files=[ "res://.import/32xgrid.png-df80b7a7b7dd1284ae028641a33e5c16.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

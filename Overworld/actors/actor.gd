@@ -127,7 +127,7 @@ func update_look_direction(direction):
 	facingDir = direction
 
 func move_to(target_position):
-	set_process(false)
+	set_physics_process(false)
 	curState = ActorState.WALKING
 	match facingDir:
 		Directions.UP:
@@ -150,7 +150,7 @@ func move_to(target_position):
 	yield(animPlayer, "animation_finished")
 	yield(tween, "tween_all_completed")
 	update_look_direction(facingDir)
-	set_process(true)
+	set_physics_process(true)
 	curState = ActorState.IDLE
 
 func bump():
@@ -161,5 +161,4 @@ func bump():
 	yield(animPlayer, "animation_finished")
 	yield(get_tree().create_timer(0.2), "timeout")
 	set_process(true)
-	print("oi m8 ima bump")
 	curState = ActorState.IDLE
