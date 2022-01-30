@@ -6,9 +6,6 @@ var name = "Meowth"
 # Pokedex ID#
 var ID = 1
 
-#Path to their sprite setup
-var spritenode = "res://sprites/Pokemon/Meowth.tscn"
-
 # The pokemon's type. If only one type use type1
 var type1 = Type.BUG
 var type2

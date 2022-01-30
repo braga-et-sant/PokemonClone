@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Object",
+"class": "Directions",
+"language": "GDScript",
+"path": "res://Data/Helpers/Directions.gd"
+}, {
+"base": "Object",
 "class": "LevelingRate",
 "language": "GDScript",
 "path": "res://Data/Helpers/LevelingRate.gd"
@@ -70,6 +75,7 @@ _global_script_classes=[ {
 "path": "res://Data/PokemonData/Registry/registry.gd"
 } ]
 _global_script_class_icons={
+"Directions": "",
 "LevelingRate": "",
 "MajorAilment": "",
 "Move": "",
@@ -87,7 +93,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PokemonClone"
-run/main_scene="res://SceneManager.tscn"
+run/main_scene="res://Overworld/maps/map1test2.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -105,7 +111,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/vnen.tiled_importer/plugin.cfg" )
 
 [global]
 

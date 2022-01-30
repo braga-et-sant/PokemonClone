@@ -50,6 +50,9 @@ func makeMoveList(poke):
 			mindex = mindex+1 if (mindex < 3) else 0 
 		else:
 			break;
+			
+	while movelistcur.size() < 4:
+		movelistcur.append(moveDb.get_move_by_name("Ice Beam"))
 	return movelistcur
 
 func _to_string():

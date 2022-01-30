@@ -1,0 +1,139 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "C:/Users/literallyme/projecttiled/map/tilesets",
+        "C:/Users/literallyme/projecttiled/tileset",
+        "C:/Users/literallyme/projecttiled/map"
+    ],
+    "fileStates": {
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/hgssbuildings2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/hgssbumps.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/hgssgrounds.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/hgssmisc.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/hgsstrees.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/untitled.tmx": {
+            "scale": 0.35921875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 480.20878642888204,
+                "y": 103.00130491518053
+            }
+        },
+        "C:/Users/literallyme/projecttiled/map/firsttown.tmx": {
+            "scale": 4,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 551.625,
+                "y": 89
+            }
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssbuildings1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssbuildings2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssbumps.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "C:/Users/literallyme/projecttiled/map/hgsscaveentrance.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssceilings.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssgrounds.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssladderbridge.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssmisc.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssmisc2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/hgssmisc3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/hgsstrees.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/mapdefault.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 801.5151515151513,
+                "y": 799.9999999999999
+            }
+        },
+        "C:/Users/literallyme/projecttiled/map/newsus.tmx": {
+            "scale": 0.5620833333333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 465.2335063009637,
+                "y": 480.35581912527806
+            }
+        },
+        "C:/Users/literallyme/projecttiled/map/tilesets/hgssbuildings1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/projecttiled/map/untitled.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 480.6666666666666,
+                "y": 477.99999999999994
+            }
+        },
+        "C:/Users/literallyme/projecttiled/tileset/hgss.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "C:/Users/literallyme/projecttiled/tileset/hgss2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "openFiles": [
+    ],
+    "project": "pokemonhgss.tiled-project",
+    "recentFiles": [
+        "C:/Users/literallyme/projecttiled/map/hgssbuildings1.tsx",
+        "C:/Users/literallyme/projecttiled/map/hgssgrounds.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/hgssbuildings2.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/untitled.tmx",
+        "C:/Users/literallyme/projecttiled/map/hgsstrees.tsx",
+        "C:/Users/literallyme/projecttiled/map/hgssmisc3.tsx",
+        "C:/Users/literallyme/projecttiled/map/hgssmisc2.tsx",
+        "C:/Users/literallyme/projecttiled/map/hgssmisc.tsx",
+        "C:/Users/literallyme/projecttiled/map/hgssladderbridge.tsx",
+        "C:/Users/literallyme/projecttiled/map/hgssceilings.tsx",
+        "C:/Users/literallyme/projecttiled/map/hgsscaveentrance.tsx",
+        "C:/Users/literallyme/projecttiled/map/hgssbumps.tsx"
+    ]
+}

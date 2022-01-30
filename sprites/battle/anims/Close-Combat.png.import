@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Close-Combat.png-08bf5aa43d30521db66eda45a582d403.stex"
+path="res://.import/Close-Combat.png-2639a53cae0b888d5ace095445b717cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/battle/anims/Close-Combat.png"
-dest_files=[ "res://.import/Close-Combat.png-08bf5aa43d30521db66eda45a582d403.stex" ]
+source_file="res://Sprites/Battle/Anims/Close-Combat.png"
+dest_files=[ "res://.import/Close-Combat.png-2639a53cae0b888d5ace095445b717cb.stex" ]
 
 [params]
 

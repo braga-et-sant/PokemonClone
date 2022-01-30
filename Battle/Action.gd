@@ -10,12 +10,12 @@ var target
 var actionType
 var priority
 
-func _init(actionType, move, actor, target, priority):
-	self.actionType = actionType
-	self.move = move
-	self.actor = actor
-	self.target = target
-	self.priority = priority
+func _init(_actionType, _move, _actor, _target, _priority):
+	self.actionType = _actionType
+	self.move = _move
+	self.actor = _actor
+	self.target = _target
+	self.priority = _priority
 
 static func sortPriority(a, b):
 	return a.priority > b.priority

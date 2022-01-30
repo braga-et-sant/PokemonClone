@@ -14,12 +14,21 @@ func setupPlayer(pokePlayer : pokemon_instance) -> void:
 func setupPlayerSprite(pokeSpecies):
 	if(playerSprite != null):
 		remove_child(playerSprite)
-	var filepath = "res://Sprites/Pokemon/Animation/" + pokeSpecies + "/" + pokeSpecies + "Anim.tscn"
-	playerSprite = load(filepath).instance()
+	var filepath = "res://Animation/" + pokeSpecies + "/" + pokeSpecies + "Anim.tscn"
+	if(ResourceLoader.exists(filepath)):
+		print(filepath)
+		playerSprite = load(filepath).instance()
+	else:
+		print("No resource found. Loading default sprite")
+		playerSprite = load("res://Animation/Default/defaultanim.tscn").instance()
+		
 	playerSprite.flag = 0
 	playerSprite.position = ($PlaySprite.position)
 	$PlaySprite.visible = false
 	add_child(playerSprite)
+
+		
+	
 
 func setupOpp(pokeOpp : pokemon_instance) -> void:
 	$OppPoke/HpProgress/Cvalue.text = str(pokeOpp.chp)
@@ -32,7 +41,7 @@ func setupOppSprite(pokeSpecies):
 	if(oppSprite != null):
 		remove_child(oppSprite)
 		
-	var filepath = "res://Sprites/Pokemon/Animation/" + pokeSpecies + "/" + pokeSpecies + "Anim.tscn"
+	var filepath = "res://Animation/" + pokeSpecies + "/" + pokeSpecies + "Anim.tscn"
 	oppSprite = load(filepath).instance()
 	oppSprite.flag = 1
 	oppSprite.position = ($OppSprite.position)

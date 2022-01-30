@@ -2,7 +2,7 @@ extends Control
 
 enum MoveOption {M1, M2, M3, M4}
 
-const MOVEARROWDEFAULT = Vector2(7, 7)
+const MOVEARROWDEFAULT = Vector2(-14, 8)
 
 onready var arrow = $MoveSelect/ArrowSelect
 
@@ -18,12 +18,12 @@ func setup(pokePlayer : pokemon_instance):
 func changeArrowPos(index : int, move : Move) -> void:
 	match index:
 		MoveOption.M1:
-			arrow.rect_position = Vector2(7, 7)
+			arrow.rect_position = Vector2(-14, 8)
 		MoveOption.M2:
-			arrow.rect_position = Vector2(80, 7)
+			arrow.rect_position = Vector2(64, 8)
 		MoveOption.M3:
-			arrow.rect_position = Vector2(7, 31)
+			arrow.rect_position = Vector2(-14, 31)
 		MoveOption.M4:
-			arrow.rect_position = Vector2(80, 31)
+			arrow.rect_position = Vector2(64, 31)
 	$MoveInfo/MovePP/PPInfo.text = str(move.total_pp) + "/" + str(move.total_pp)
 	$MoveInfo/MoveType/TypeInfo.text = TypeStr.new().toStr(move.type)

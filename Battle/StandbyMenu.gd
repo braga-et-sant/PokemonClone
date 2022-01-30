@@ -1,6 +1,6 @@
 extends Control
 
-const ARROWDEFAULT = Vector2(17, 6)
+const ARROWDEFAULT = Vector2(-5, 1)
 const ARROWSPACING = 13
 const STANDBYOPTIONS = 4
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/41996.png-4c7dbfed0c0f07c6544f7bc3e63d441b.stex"
+path="res://.import/41996.png-b81a8232511147aac3c4df4cf30169ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/battle/bases/41996.png"
-dest_files=[ "res://.import/41996.png-4c7dbfed0c0f07c6544f7bc3e63d441b.stex" ]
+source_file="res://Sprites/Battle/Bases/41996.png"
+dest_files=[ "res://.import/41996.png-b81a8232511147aac3c4df4cf30169ad.stex" ]
 
 [params]
 

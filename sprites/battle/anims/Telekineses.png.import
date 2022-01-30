@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Telekineses.png-9029ec41e8fbc96db97348e9f08212c5.stex"
+path="res://.import/Telekineses.png-4e0c08313a18e483dbd7a40916f00b62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/battle/anims/Telekineses.png"
-dest_files=[ "res://.import/Telekineses.png-9029ec41e8fbc96db97348e9f08212c5.stex" ]
+source_file="res://Sprites/Battle/Anims/Telekineses.png"
+dest_files=[ "res://.import/Telekineses.png-4e0c08313a18e483dbd7a40916f00b62.stex" ]
 
 [params]
 

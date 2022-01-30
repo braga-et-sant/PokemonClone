@@ -3,7 +3,7 @@ extends Control
 enum BattleState {STANDBY, MOVE_SELECT, POKEMON_SELECT, ITEM_SELECT, RUN, DO_MOVE}
 var curState = BattleState.STANDBY
 
-var teamPlayer = [pokemon_instance.new().genWild(1), pokemon_instance.new().genWild(3), pokemon_instance.new().genWild(2), pokemon_instance.new().genWild(4), pokemon_instance.new().genWild(1)]
+var teamPlayer = [pokemon_instance.new().genWild(1), pokemon_instance.new().genWild(3), pokemon_instance.new().genWild(2), pokemon_instance.new().genWild(4), pokemon_instance.new().genWild(1), pokemon_instance.new().genWild(5)]
 var teamEnemy = [pokemon_instance.new().genWild(4), pokemon_instance.new().genWild(2), pokemon_instance.new().genWild(3), pokemon_instance.new().genWild(4)]
 var pokeOpp = teamEnemy[0]
 var pokePlayer = teamPlayer[0]
@@ -108,6 +108,7 @@ func switchPokemon(choiceIndex: int) -> void:
 	teamPlayer[choiceIndex] = temp
 	
 	setupPlayer()
+	setupMoveMenu()
 
 func validSwitch(choiceIndex: int) -> bool:
 	if(choiceIndex >= teamPlayer.size()):

@@ -6,8 +6,6 @@ var name = "Farfetchd"
 # Pokedex ID#
 var ID = 4
 
-var spritenode = "res://sprites/Pokemon/Farfetchd.tscn"
-
 # The pokemon's type. If only one type use type1
 var type1 = Type.WATER
 var type2 = Type.FLYING

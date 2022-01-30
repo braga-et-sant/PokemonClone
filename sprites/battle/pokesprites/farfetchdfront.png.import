@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/farfetchdfront.png-3a7baa8afab4412a1bb81472282cf452.stex"
+path="res://.import/farfetchdfront.png-12e28fdc700ccf15ab395bbce46033f5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/battle/pokesprites/farfetchdfront.png"
-dest_files=[ "res://.import/farfetchdfront.png-3a7baa8afab4412a1bb81472282cf452.stex" ]
+source_file="res://Sprites/Battle/Pokesprites/farfetchdfront.png"
+dest_files=[ "res://.import/farfetchdfront.png-12e28fdc700ccf15ab395bbce46033f5.stex" ]
 
 [params]
 

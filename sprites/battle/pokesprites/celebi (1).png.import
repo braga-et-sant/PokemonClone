@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/celebi (1).png-4cf6d186874685201ce491175c2463b8.stex"
+path="res://.import/celebi (1).png-a7a052ab882528e4642a63018f8d5c6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/battle/pokesprites/celebi (1).png"
-dest_files=[ "res://.import/celebi (1).png-4cf6d186874685201ce491175c2463b8.stex" ]
+source_file="res://Sprites/Battle/Pokesprites/celebi (1).png"
+dest_files=[ "res://.import/celebi (1).png-a7a052ab882528e4642a63018f8d5c6e.stex" ]
 
 [params]
 

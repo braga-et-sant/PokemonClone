@@ -3,17 +3,17 @@
 [ext_resource path="res://styles/pokemonfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Battle/BattleDialog.gd" type="Script" id=2]
 [ext_resource path="res://Battle/BattleControl.gd" type="Script" id=3]
-[ext_resource path="res://sprites/Pokemon/meowthfront.png" type="Texture" id=4]
-[ext_resource path="res://sprites/Pokemon/meowthback.png" type="Texture" id=5]
-[ext_resource path="res://sprites/menu/ui_arrow_left_right_battle.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Battle/Pokesprites/meowthfront.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Battle/Pokesprites/meowthback.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Battle/UI/Point-Finger.png" type="Texture" id=6]
 [ext_resource path="res://sprites/battle/bases/41996.png" type="Texture" id=7]
 [ext_resource path="res://styles/stylebattle.tres" type="StyleBox" id=8]
 [ext_resource path="res://styles/flatbattlestyle.tres" type="StyleBox" id=9]
-[ext_resource path="res://Sprites/menu/ui_arrow_left_right.png" type="Texture" id=10]
 [ext_resource path="res://Battle/BattleScreen.gd" type="Script" id=11]
 [ext_resource path="res://Battle/StandbyMenu.gd" type="Script" id=12]
 [ext_resource path="res://Battle/MoveSelectMenu.gd" type="Script" id=13]
 [ext_resource path="res://Battle/SelectPokeMenu.gd" type="Script" id=14]
+[ext_resource path="res://Sprites/Battle/Background/bggrass.png" type="Texture" id=15]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.603922, 0.584314, 0.584314, 1 )
@@ -44,6 +44,14 @@ size = 10
 font_data = SubResource( 1 )
 
 [node name="BattleSceneNode" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 256.0
+margin_bottom = 144.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BattleControl" type="Control" parent="."]
 margin_right = 40.0
@@ -77,13 +85,13 @@ region_rect = Rect2( 270, 10, 130, 55 )
 position = Vector2( 58, 103 )
 texture = ExtResource( 5 )
 hframes = 13
-vframes = 11
+vframes = 3
 
 [node name="OppSprite" type="Sprite" parent="BattleControl/BattleScreen"]
 position = Vector2( 201, 29 )
 texture = ExtResource( 4 )
 hframes = 14
-vframes = 10
+vframes = 3
 
 [node name="PlayPoke" type="Panel" parent="BattleControl/BattleScreen"]
 margin_left = 153.0
@@ -255,6 +263,7 @@ __meta__ = {
 }
 
 [node name="StandbyMenu" type="Control" parent="BattleControl"]
+visible = false
 anchor_top = 3.29
 anchor_right = 6.394
 anchor_bottom = 4.8
@@ -322,10 +331,10 @@ custom_fonts/normal_font = ExtResource( 1 )
 text = "Run"
 
 [node name="ArrowSelect" type="TextureRect" parent="BattleControl/StandbyMenu/SelectAction"]
-margin_left = 17.0
-margin_top = 6.0
-margin_right = 23.0
-margin_bottom = 16.0
+margin_left = -5.0
+margin_top = 14.0
+margin_right = 29.0
+margin_bottom = 48.0
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -353,6 +362,7 @@ custom_fonts/normal_font = SubResource( 2 )
 text = "What will Pokémon do..."
 
 [node name="MoveSelectMenu" type="Control" parent="BattleControl"]
+visible = false
 margin_left = 86.0
 margin_top = 192.0
 margin_right = 86.0
@@ -415,11 +425,10 @@ custom_fonts/font = SubResource( 6 )
 text = "Hydro Pump"
 
 [node name="ArrowSelect" type="TextureRect" parent="BattleControl/MoveSelectMenu/MoveSelect"]
-margin_left = 80.0
-margin_top = 8.0
-margin_right = 86.0
-margin_bottom = 18.0
-rect_scale = Vector2( 2, 2 )
+margin_left = -14.0
+margin_top = 31.0
+margin_right = 20.0
+margin_bottom = 65.0
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -484,6 +493,7 @@ custom_fonts/font = SubResource( 8 )
 text = "Normal"
 
 [node name="BattleDialog" type="Control" parent="BattleControl"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 2 )
@@ -734,8 +744,8 @@ margin_left = 120.0
 margin_top = 59.0
 margin_right = 144.0
 margin_bottom = 99.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 10 )
+rect_scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
