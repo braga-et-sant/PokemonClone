@@ -1,16 +1,31 @@
 extends Node2D
 
-onready var ground = $Ground
-onready var grass = $Grass
-onready var collision = $CollisionObjects
-onready var passthrough = $PassthroughObjects
-onready var objects = $Objects
-onready var actors = $Actors
+onready var ground 
+onready var grass
+onready var collision 
+onready var passthrough 
+onready var objects 
+onready var actors 
 
 onready var actors_pos = []
 onready var objects_pos = []
 
+func setup():
+	if $Ground:
+		ground = $Ground
+	if $Grass:
+		grass = $Grass
+	if $CollisionObjects:
+		collision = $CollisionObjects
+	if $PassthroughObjects:
+		passthrough = $PassthroughObjects
+	if $Objects:
+		objects = $Objects
+	if $Actors:
+		actors = $Actors
+
 func _ready():
+	setup()
 	for child in actors.get_children():
 		actors_pos.append(ground.world_to_map(child.position))
 	for child in objects.get_children():
@@ -21,7 +36,6 @@ func _ready():
 	print("Object pos:")
 	print(objects_pos)
 	
-	findObjPos(findObj(Vector2(13, 15)))
 	
 	
 func request_move(pawn, direction):

@@ -10,12 +10,20 @@
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles"
     ],
     "fileStates": {
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/house1.tmx": {
+            "scale": 2.4640625,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 111.60431198478123,
+                "y": 88.87761572606215
+            }
+        },
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/map1.tmx": {
             "scale": 1.5,
-            "selectedLayer": 4,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 526.6666666666667,
-                "y": 495.3333333333333
+                "x": 338.66666666666663,
+                "y": 302
             }
         },
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssbuildings2.tsx": {
@@ -40,9 +48,9 @@
         }
     },
     "last.imagePath": "C:/Users/literallyme/Documents/PokemonClone/TiledProject/images",
-    "map.height": 32,
+    "map.height": 8,
     "map.lastUsedFormat": "tmx",
-    "map.width": 32,
+    "map.width": 8,
     "openFiles": [
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssgrounds.tsx",
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc.tsx",

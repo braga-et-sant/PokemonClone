@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/house1.tmx-5f8dabe3d42bff8cb032fed606e9f4f9.scn"
+
+[deps]
+
+source_file="res://TiledProject/maps/house1.tmx"
+dest_files=[ "res://.import/house1.tmx-5f8dabe3d42bff8cb032fed606e9f4f9.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""

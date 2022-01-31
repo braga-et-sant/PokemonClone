@@ -1,0 +1,20 @@
+[remap]
+
+importer="vnen.tiled_tileset_importer"
+type="TileSet"
+path="res://.import/hgssbuildings1.tsx-1fb5925ee1334e9e501401472e8f322b.res"
+
+[deps]
+
+source_file="res://TiledProject/tiles/hgssbuildings1.tsx"
+dest_files=[ "res://.import/hgssbuildings1.tsx-1fb5925ee1334e9e501401472e8f322b.res" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+image_flags=7
+embed_internal_images=false
+save_tiled_properties=false
+apply_offset=false
+post_import_script=""

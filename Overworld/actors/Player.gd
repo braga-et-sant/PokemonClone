@@ -5,7 +5,11 @@ var max_turn_delay = 0.05
 
 func _ready():
 	#update_look_direction(Directions.RIGHT)
-	position = Vector2(336, 336)
+	pass
+	
+func set_spawn(spawnPosition, direction):
+	position = spawnPosition
+	update_look_direction(direction)
 	
 func _physics_process(delta):
 	if(curState == ActorState.IDLE ):
