@@ -17180,6 +17180,7 @@ region_rect = Rect2( 192, 352, 32, 32 )
 region_filter_clip = true
 
 [node name="Grid" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1

@@ -263,7 +263,6 @@ __meta__ = {
 }
 
 [node name="StandbyMenu" type="Control" parent="BattleControl"]
-visible = false
 anchor_top = 3.29
 anchor_right = 6.394
 anchor_bottom = 4.8
@@ -362,7 +361,6 @@ custom_fonts/normal_font = SubResource( 2 )
 text = "What will Pokémon do..."
 
 [node name="MoveSelectMenu" type="Control" parent="BattleControl"]
-visible = false
 margin_left = 86.0
 margin_top = 192.0
 margin_right = 86.0
@@ -493,7 +491,6 @@ custom_fonts/font = SubResource( 8 )
 text = "Normal"
 
 [node name="BattleDialog" type="Control" parent="BattleControl"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 2 )

@@ -94,11 +94,45 @@ func executeBattleQueue(battleQueue) -> void:
 				target = pokeOpp
 			elif(act.actor == pokeOpp):
 				target = pokePlayer 
-			target.chp -= act.move.base_power / 10 
-			nodeBattleDialog.queue_text(act.actor.nick + "'s " + act.move.name + " does " + str(act.move.base_power / 10) + " damage to " + target.nick)
+			
+			var dmg = calcDamage(act.actor, act.target, act.move)
+			target.chp -= dmg
+			nodeBattleDialog.queue_text(act.actor.nick + "'s " + act.move.name + " does " + str(dmg) + " damage to " + target.nick)
 		elif act.actionType == action.ActionType.SWITCH:
 			switchPokemon(selectPokeIndex)
 	updateGameState()
+	
+func calcDamage(actor, target, move):
+	var damage: int = (((((2*actor.level)/5) + 2) * move.base_power * (actor.rawstats["atk"] / target.rawstats["def"]))/50)+2
+	#damage *= targets
+	#damage *= weather
+	
+	##Crit
+	var crit = randi()%10+1
+	if crit == 1:
+		damage *= 1.5
+		
+	#DamageRnage
+	var randmod = randi()%16+1
+	damage = (damage * (100 - randmod))/100
+	
+	##STAB
+	if actor.type1 == move.type || actor.type2 == move.type:
+		damage *= 1.5
+		print("STAB")
+		
+	##Type Effectiveness
+	var typemod = Type.type_advantage_multiplier(move.type, target)
+	damage *= typemod
+	print("Typemod: " + str(typemod))
+	##Burn halved attack
+	
+	##Other
+	
+	if damage == 0:
+		damage = 1
+		
+	return damage
 
 ## Switches the current first pokemon in party by changing the order of the teamPlayer array
 ## Then updates the battlestate and makes the enemy execute their turn.

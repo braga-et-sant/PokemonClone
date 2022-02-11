@@ -50,6 +50,11 @@ _global_script_classes=[ {
 "path": "res://Data/Helpers/MoveTarget.gd"
 }, {
 "base": "Object",
+"class": "Nature",
+"language": "GDScript",
+"path": "res://Data/Helpers/Nature.gd"
+}, {
+"base": "Object",
 "class": "Type",
 "language": "GDScript",
 "path": "res://Data/Helpers/Type.gd"
@@ -83,6 +88,7 @@ _global_script_class_icons={
 "MoveSet": "",
 "MoveStyle": "",
 "MoveTarget": "",
+"Nature": "",
 "Type": "",
 "TypeStr": "",
 "action": "",
@@ -102,10 +108,10 @@ Utils="*res://Autoload/utils.gd"
 
 [display]
 
-window/size/width=512
-window/size/height=384
+window/size/width=256
+window/size/height=192
 window/size/test_width=1024
-window/size/test_height=768
+window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -118,6 +124,7 @@ enabled=PoolStringArray( "res://addons/vnen.tiled_importer/plugin.cfg" )
 "main scene"=false
 display=false
 load=false
+window=false
 
 [importer_defaults]
 

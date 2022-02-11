@@ -3,16 +3,16 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/map1.tmx",
+    "activeFile": "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/house1.tmx",
     "expandedProjectPaths": [
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles",
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps",
-        ".",
-        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles"
+        "."
     ],
     "fileStates": {
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/house1.tmx": {
             "scale": 2.4640625,
-            "selectedLayer": 2,
+            "selectedLayer": 3,
             "viewCenter": {
                 "x": 111.60431198478123,
                 "y": 88.87761572606215
@@ -26,7 +26,15 @@
                 "y": 302
             }
         },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssbuildings1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssbuildings2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssceilings.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -34,7 +42,19 @@
             "scaleInDock": 1,
             "scaleInEditor": 2
         },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssladderbridge.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc3.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -56,15 +76,27 @@
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc.tsx",
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/map1.tmx",
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssbuildings2.tsx",
-        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgsstrees.tsx"
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgsstrees.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/house1.tmx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc2.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc3.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssceilings.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssladderbridge.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssbuildings1.tsx"
     ],
     "project": "projecthgss.tiled-project",
     "recentFiles": [
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssgrounds.tsx",
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc.tsx",
-        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgsstrees.tsx",
-        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssbuildings2.tsx",
         "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/map1.tmx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssbuildings2.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgsstrees.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssbuildings1.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssladderbridge.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssceilings.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc3.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/tiles/hgssmisc2.tsx",
+        "C:/Users/literallyme/Documents/PokemonClone/TiledProject/maps/house1.tmx",
         "C:/Users/literallyme/HGSS.tsx"
     ],
     "tileset.lastUsedFormat": "tsx"
