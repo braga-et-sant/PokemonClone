@@ -2,7 +2,7 @@ extends Object
 
 class_name action
 
-enum ActionType {MOVE, SWITCH}
+enum ActionType {MOVE, SWITCH, STATMOVE}
 
 var move
 var actor

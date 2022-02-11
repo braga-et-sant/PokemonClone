@@ -8,6 +8,9 @@ var teamEnemy = [pokemon_instance.new().genWild(4), pokemon_instance.new().genWi
 var pokeOpp = teamEnemy[0]
 var pokePlayer = teamPlayer[0]
 
+var playerStatMods = [0, 0, 0, 0, 0, 0, 0]
+var oppStatMods = [0, 0, 0, 0, 0, 0, 0]
+
 var regist = registry.new()
 
 onready var nodeBattleScreen = $BattleScreen
@@ -89,21 +92,95 @@ func buildBattleQueue(myAction : action) -> void:
 func executeBattleQueue(battleQueue) -> void:
 	for act in battleQueue:
 		if act.actionType == action.ActionType.MOVE:
-			var target
-			if(act.actor == pokePlayer):
-				target = pokeOpp
-			elif(act.actor == pokeOpp):
-				target = pokePlayer 
-			
-			var dmg = calcDamage(act.actor, act.target, act.move)
-			target.chp -= dmg
-			nodeBattleDialog.queue_text(act.actor.nick + "'s " + act.move.name + " does " + str(dmg) + " damage to " + target.nick)
+			if(act.move.style == MoveStyle.PHYSICAL || act.move.style == MoveStyle.SPECIAL):
+				var target
+				if(act.actor == pokePlayer):
+					target = pokeOpp
+				elif(act.actor == pokeOpp):
+					target = pokePlayer 
+				
+				var dmg = calcDamage(act.actor, act.target, act.move)
+				target.chp -= dmg
+				nodeBattleDialog.queue_text(act.actor.nick + "'s " + act.move.name + " does " + str(dmg) + " damage to " + target.nick)
+			elif(act.move.style == MoveStyle.STATUS):
+				var stateff = act.move.main_status_effect
+				if(act.target == pokeOpp):
+					applyStatChange(oppStatMods, stateff)
+				elif(act.target == pokePlayer):
+					applyStatChange(playerStatMods, stateff)
+				nodeBattleDialog.queue_text(act.actor.nick + "'s " + act.move.name + " changes " + act.target.nick + "'s Stats!")
+					
 		elif act.actionType == action.ActionType.SWITCH:
 			switchPokemon(selectPokeIndex)
 	updateGameState()
 	
+func applyStatChange(stats, mod):
+	stats[0] += mod.attack
+	stats[1] += mod.defense
+	stats[2] += mod.sp_attack
+	stats[3] += mod.defense
+	stats[4] += mod.speed
+	stats[5] += mod.accuracy
+	stats[6] += mod.evasion
+	
+	for s in stats:
+		if s > 6:
+			s = 6
+		if s < -6:
+			s = -6
+			
+func statChangeModifier(n):
+	if n == 0:
+		return 1
+	if n > 0:
+		print("Stat change modifier: " + String((2 + n)/2))
+		return float(2 + n)/2
+	else:
+		print("N: " + String(n))
+		print("Stat change modifier: " + String(2/(2 + abs(n))))
+		return float(2)/(2 + abs(n))
+			
+func clearStatChange(stats):
+	for s in stats:
+		s = 0
+	
 func calcDamage(actor, target, move):
-	var damage: int = (((((2*actor.level)/5) + 2) * move.base_power * (actor.rawstats["atk"] / target.rawstats["def"]))/50)+2
+	var statatk
+	var statdef
+	var statmodatk
+	var statmoddef
+	if(move.style == MoveStyle.PHYSICAL):
+		statatk = "atk"
+		statdef = "def"
+		if(actor == pokeOpp):
+			statmodatk = oppStatMods[0]
+			statmoddef = playerStatMods[1]
+		elif(actor == pokePlayer):
+			statmodatk = playerStatMods[0]
+			statmoddef = oppStatMods[1]
+	elif(move.style == MoveStyle.SPECIAL):
+		statatk = "spa"
+		statdef = "spd"
+		if(actor == pokeOpp):
+			statmodatk = oppStatMods[2]
+			statmoddef = playerStatMods[3]
+		elif(actor == pokePlayer):
+			statmodatk = playerStatMods[2]
+			statmoddef = oppStatMods[3]
+		
+	
+	print(statmodatk)
+	print(statmoddef)
+		
+	var statcalcatk = actor.rawstats[statatk] * statChangeModifier(statmodatk)
+	var statcalcdef = target.rawstats[statdef] * statChangeModifier(statmoddef)
+	
+	print(statcalcatk)
+	print(statcalcdef)
+	
+	print("Target rawstats:" + String(target.rawstats[statdef]))
+	print("Target statchangeMod:" + String(statChangeModifier(statmoddef)))
+	var damage: int = (((((2*actor.level)/5) + 2) * move.base_power * (statcalcatk / statcalcdef))/50)+2
 	#damage *= targets
 	#damage *= weather
 	
@@ -112,7 +189,7 @@ func calcDamage(actor, target, move):
 	if crit == 1:
 		damage *= 1.5
 		
-	#DamageRnage
+	#DamageRange
 	var randmod = randi()%16+1
 	damage = (damage * (100 - randmod))/100
 	
@@ -140,6 +217,8 @@ func switchPokemon(choiceIndex: int) -> void:
 	var temp = teamPlayer[0]
 	teamPlayer[0] = teamPlayer[choiceIndex]
 	teamPlayer[choiceIndex] = temp
+	
+	clearStatChange(playerStatMods)
 	
 	setupPlayer()
 	setupMoveMenu()

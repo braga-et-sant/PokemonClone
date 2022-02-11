@@ -55,6 +55,11 @@ _global_script_classes=[ {
 "path": "res://Data/Helpers/Nature.gd"
 }, {
 "base": "Object",
+"class": "StatStageEffect",
+"language": "GDScript",
+"path": "res://Data/Helpers/StatStageEffect.gd"
+}, {
+"base": "Object",
 "class": "Type",
 "language": "GDScript",
 "path": "res://Data/Helpers/Type.gd"
@@ -89,6 +94,7 @@ _global_script_class_icons={
 "MoveStyle": "",
 "MoveTarget": "",
 "Nature": "",
+"StatStageEffect": "",
 "Type": "",
 "TypeStr": "",
 "action": "",
